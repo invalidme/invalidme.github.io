@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="zhang">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="����hexo���˲���">
+  <meta property="og:description" content>
+  <meta property="og:site_name" content="Hexo">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">����hexo���˲���</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zhang</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-03-26</span>
+            <span class="time">23:13:09</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>�hibernate����<br>1.����һ��Java��Ŀ��hibernate_1��<br>����hibernate��jar����src/lib��</p>
+<p>2.����ʵ���ࣨjavaBean��<br>src�ļ����´���һ������com.zlj.entity��        entity:ʵ��<br>���´���һ���ࣨUser��<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">                //hibernateҪ��ʵ������һ������(�ֶ�)��ֵΨһ һ����id</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String pwd;</span><br><span class="line">	private String address;     </span><br><span class="line">                ........get��set����.......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>��ͨ��hibernate������
+</code></pre><p>3.����hibernateӳ�������ļ�(����ʵ��������ݿ��һһ��Ӧ��ϵ)(xml��ʽ)<br>ע��:ӳ���ļ����ƺ�λ��û�й̶�Ҫ��(����hbm.xml)</p>
+<p>��ʵ�������ڰ�����һ��User.hbm.xml�����ļ�           hbm:hibernatemapping<br><figure class="highlight plain"><figcaption><span>version</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE hibernate-mapping PUBLIC                         //��������xml�ļ��������������ļ�������Լ����dtd��</span><br><span class="line">    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;</span><br><span class="line">    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;hibernate-mapping&gt;</span><br><span class="line"></span><br><span class="line">//��һ��:������ͱ���Ӧ</span><br><span class="line">&lt;class name=&quot;com.zlj.entity.user&quot; table=&quot;t_user&quot;&gt;            //class��ǩ  name:ʵ�����ȫ·��    table:�������� </span><br><span class="line">//�ڶ���:����ʵ����id�ͱ���id��Ӧ</span><br><span class="line">   &lt;id name=&quot;id&quot; column=&quot;id&quot;&gt;                            // id��ǩ name:ʵ������id��������   column����:���ɱ����ֶ�����</span><br><span class="line">   &lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;        // ���ñ���id��������,native:���ɱ�id�ͻ��Զ�����(����)</span><br><span class="line">   &lt;/id&gt;</span><br><span class="line">//������</span><br><span class="line">&lt;property name=&quot;name&quot; column=&quot;name&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;pwd&quot; column=&quot;pwd&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;address&quot; column=&quot;address&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/class&gt;</span><br><span class="line">&lt;/hibernate-mapping&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.����hibernate���������ļ�(xml��ʽ)<br>ע��:���������ļ�����(hibernate.cfg.xml)��λ��(src����)�̶�<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE hibernate-configuration PUBLIC         // //��������xml�ļ��������������ļ�������Լ����dtd�� </span><br><span class="line">	&quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;</span><br><span class="line">	&quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;</span><br><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">&lt;session-factory&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--��һ����:�������ݿ���Ϣ  --&gt;(��Ҫ)</span><br><span class="line">&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///db_database10&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.username&quot;&gt;root&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.password&quot;&gt;123&lt;/property&gt;</span><br><span class="line">&lt;!--�ڶ�����:����hibernate��Ϣ  --&gt;(�Ǳ�Ҫ)</span><br><span class="line">&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;                                              //����ײ�sql���</span><br><span class="line">&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;                                           //����ײ�sql����ʽ </span><br><span class="line">&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;                                 //hibernate�Զ�������</span><br><span class="line">&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt; //�������ݿⷽ��:��hibernate���ʶ��ͬ���ݿ��Լ����е����</span><br><span class="line">&lt;!--��������:��ӳ���ļ��ŵ����������ļ���  --&gt;(��Ҫ)</span><br><span class="line">&lt;mapping resource=&quot;com/zlj/entity/User.hbm.xml&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/session-factory&gt;</span><br><span class="line">&lt;/hibernate-configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>5.���Թ���(����)<br>������src�´���һ����(com.zlj.hibernatetest),���ڷŲ�����(HibernateDemo)<br><figure class="highlight plain"><figcaption><span>com.zlj.hibernatetest;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.hibernate.Session;</span><br><span class="line">import org.hibernate.SessionFactory;</span><br><span class="line">import org.hibernate.Transaction;</span><br><span class="line">import org.hibernate.cfg.Configuration;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import com.zlj.entity.user;</span><br><span class="line"></span><br><span class="line">public class HibernateDemo &#123;</span><br><span class="line">	@Test</span><br><span class="line"> public void testAdd()&#123;</span><br><span class="line">	Configuration cfg=new Configuration();                           //��һ��:����hibernate���������ļ� (hibernate�����װ��һ��������ʵ�ּ���)                                                                                                            </span><br><span class="line">	cfg.configure();                                                                     (����:��src���ҵ�������hibernate.cfg.xml���ļ�,Ȼ��Ѵ������ļ��ŵ�cfg������)</span><br><span class="line">	 </span><br><span class="line">	SessionFactory sessionFactory=cfg.buildSessionFactory();//�ڶ���:ʹ��configuration���󴴽�SessionFactory����</span><br><span class="line">	                                                                                           (��ȡhibernate���������ļ�����,����sessionFactory,�ڹ����и���ӳ���ϵ,�����ݿ��д�����)</span><br><span class="line">	Session session=sessionFactory.openSession();                  //������:ʹ��SessionFactory����session����</span><br><span class="line">	                                                                                             (����������)</span><br><span class="line">	Transaction tx=session.beginTransaction();	           //���Ĳ�:��������</span><br><span class="line">		</span><br><span class="line">	User u=new User();                                                              //���岽:д����crud����(���˲��費�ǹ̶���)</span><br><span class="line">	U.setName(&quot;С��&quot;);                                                                (ע��:����session�ķ���ʵ������)</span><br><span class="line">	U.setPwd(&quot;123&quot;);</span><br><span class="line">	U.setAddress(&quot;�й�&quot;);</span><br><span class="line">	session.save(U);</span><br><span class="line">	</span><br><span class="line">	 tx.commit();                                                                       //������:�ύ����</span><br><span class="line">	 </span><br><span class="line">	 session.close();                                                                   //���߲�:�ر���Դ</span><br><span class="line">	 sessionFactory.close();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>6.hibernate����api<br>Configuration:����,<br>SessionFactory:����sessionFactoryʱ�ر����Դ<br>���:һ����Ŀ����һ��sessionFactory����<br>д�����࣬д��̬�����ʵ��<br>��̬������������ʱִ��,ִֻ��һ��<br>src�´���com.zlj.utils��,���ڴ���HibernateUtils������<br><figure class="highlight plain"><figcaption><span>com.zlj.utils;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.hibernate.SessionFactory;</span><br><span class="line">import org.hibernate.cfg.Configuration;</span><br><span class="line"></span><br><span class="line">public class HibernateUtils &#123;</span><br><span class="line">	static Configuration cfg=null;</span><br><span class="line">	static SessionFactory sessionFactory=null;</span><br><span class="line">     static&#123;</span><br><span class="line">    	    cfg=new Configuration(); //���غ��������ļ�</span><br><span class="line">    		cfg.configure();</span><br><span class="line">    		SessionFactory sessionFactory=cfg.buildSessionFactory();</span><br><span class="line">        &#125;</span><br><span class="line">     //�ṩ��������sessionFactory  (��̬��������ֱ�ӵ���)</span><br><span class="line">     public static SessionFactory getSessionFactory()&#123;</span><br><span class="line">    	 return sessionFactory;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>�������м���<code>SessionFactory sessionFactory=HibernateUtils.getSessionFactory();</code></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
