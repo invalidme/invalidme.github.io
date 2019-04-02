@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-04-01</span>
-            <span class="time">18:53:34</span>
+            <span class="time">13:35:14</span>
           </span>
           
         </div>
@@ -113,7 +113,7 @@
 <p>-级联删除<br>删除一个客户，这个客户里面的所有的联系人也删除<br>第一步：配置客户映射文件(set标签)<br><img src="/2019/04/01/hibernate学习记录-3/级联删除1.PNG"><br>第二步：代码<img src="/2019/04/01/hibernate学习记录-3/级联删除2.PNG"></p>
 <p>——–一对多的修改操作——–<br>1.让联系人所属客户改变<br><img src="/2019/04/01/hibernate学习记录-3/修改.PNG"><br>2.inverse属性<br>因为hibernate双向维护外键，在客户和联系人里面都需要维护外键，修改客户时候修改一次外键，修改联系人时候也修改一次外键，造成效率问题<br>解决方式：让其中的一方不维护外键，在放弃关系维护映射文件中，进行配置，在set标签上使用inverse属性<br>代码：<img src="/2019/04/01/hibernate学习记录-3/修改2.PNG"></p>
 <p>——–Hibernate多对多操作——–<br>多对多映射配置<br>第一步：创建实体类，让两个实体类之间互相表示<br><img src="/2019/04/01/hibernate学习记录-3/多对多1.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/多对多2.PNG"><br>第二步：配置映射文件<br><img src="/2019/04/01/hibernate学习记录-3/多对多映射配置1.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/多对多映射配置2.PNG"><br>第三步：配置核心配置文件<br><img src="/2019/04/01/hibernate学习记录-3/多对多核心配置文件.PNG"><br>第四步：测试：run工具类测试<br><img src="/2019/04/01/hibernate学习记录-3/工具类测试.PNG"></p>
-<p>多对多级联保存<br>根据用户保存角色<br>第一步：在用户配置文件中的set标签，cascade值save-update<br><br>第二步：代码<br><img src="/2019/04/01/hibernate学习记录-3/多对多级联保存测试.PNG"></p>
+<p>多对多级联保存<br>根据用户保存角色<br>第一步：在用户配置文件中的set标签，cascade值save-update<br><img src="/2019/04/01/hibernate学习记录-3/多对多级联保持1.PNG"><br>第二步：代码<br><img src="/2019/04/01/hibernate学习记录-3/多对多级联保存测试.PNG"></p>
 <p>多对多级联删除（了解）<br>第一步：在set标签，cascade值delete<br>cascade=”save-update,delete”<br>第二步：代码部分<br>User u=session.get(User.class,1);<br>session.delete(u);</p>
 <p>维护第三张表<br>1.让某个用户有某个角色<br>第一步：根据id查用户和角色<br>第二步：把角色放入用户里<br><img src="/2019/04/01/hibernate学习记录-3/维护表1.PNG"></p>
 <p>2.让某个用户没有某个角色<br>第一步：根据id查用户和角色<br>第二步：从用户里把角色去掉<br><img src="/2019/04/01/hibernate学习记录-3/维护表2.PNG"></p>

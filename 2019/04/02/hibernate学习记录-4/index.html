@@ -8,10 +8,10 @@
   <meta name="description" content>
   <meta name="author" content="zhang">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Hexo">
+  <meta property="og:title" content="hibernate学习记录-4">
   <meta property="og:description" content>
   <meta property="og:site_name" content="Hexo">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:image" content="http://yoursite.com">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -35,8 +35,7 @@
 </head>
 
   <body>
-    <!-- Archive Header -->
-<!-- Page Header -->
+    <!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
@@ -44,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Blog Archives</p>
+          <p class="title">hibernate学习记录-4</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -89,74 +88,33 @@
   </div>
 </header>
 
-<!-- Archive List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      
-        <div class="archive-item">
-  <a href="/2019/04/02/hibernate学习记录-4/" class="post-title">
-    hibernate学习记录-4
-  </a>
-  <div class="date text-muted">Posted on 2019-04-02 13:33:55</div>
-</div>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zhang</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-02</span>
+            <span class="time">13:35:14</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>——–Hibernate查询方式——–<br>1.对象导航查询（如需求：根据id查询某个客户，再查询这个客户里面的所有联系人）<br><img src="/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG"><br>2.OID查询（根据id查询某一条记录，返回对象）<br>通过调用session里的get()方法查询<br>3.hql查询（创建Query对象，写hql语句实现查询）<br>使用hql查询时，要创建并使用Querry对象<br>–查询所有（重要）<br><img src="/2019/04/02/hibernate学习记录-4/hql查询所有.PNG"><br>–条件查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/条件查询.PNG"><br>–排序查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/排序查询.PNG"><br>–分页查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/分页查询.PNG"><br>–投影查询(SELECT id,name FROM t_customer)<br><img src="/2019/04/02/hibernate学习记录-4/投影查询.PNG"><br>–聚集函数的使用(count,sum,avg,max,min)<br>(SELECT COUNT(*) FROM t_customer)<br><img src="/2019/04/02/hibernate学习记录-4/聚集函数的使用.PNG"><br>4.QBC查询（Criteria对象）<br>5.本地sql查询（SQLQuery对象，写普通的sql语句实现查询）<br>——–Hibernate检索策略——–<br>检索策略的概念<br>第一类：立即查询<br>第二类：延迟查询</p>
 
-      
-        <div class="archive-item">
-  <a href="/2019/04/01/hibernate学习记录-3/" class="post-title">
-    hibernate学习记录-3
-  </a>
-  <div class="date text-muted">Posted on 2019-04-01 15:53:41</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/2019/03/31/hibernate学习记录-2/" class="post-title">
-    hibernate学习记录-2
-  </a>
-  <div class="date text-muted">Posted on 2019-03-31 20:16:14</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/2019/03/30/hibernate学习记录-1/" class="post-title">
-    hibernate学习记录_1
-  </a>
-  <div class="date text-muted">Posted on 2019-03-30 23:26:06</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/2019/03/26/构建hexo个人博客/" class="post-title">
-    构建hexo个人博客
-  </a>
-  <div class="date text-muted">Posted on 2019-03-26 12:58:39</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/2019/03/24/hello-world/" class="post-title">
-    Hello World
-  </a>
-  <div class="date text-muted">Posted on 2019-03-24 22:41:57</div>
-</div>
-
-      
-
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-          
-      </ul>
-    </div>
-  </div>
-</div>
+</article>
 
 
 
