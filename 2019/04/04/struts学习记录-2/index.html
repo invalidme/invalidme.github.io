@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="zhang">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="struts学习记录-2">
+  <meta property="og:description" content>
+  <meta property="og:site_name" content="Hexo">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">struts学习记录-2</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zhang</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-04</span>
+            <span class="time">16:48:32</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>——–结果页面配置——–</p>
+<ul>
+<li>全局结果页面<br>创建两个action，执行默认的方法execute方法，让两个action的方法都返回success，返回success之后，配置到同一个页面里面<br>（1）如果多个action，方法里面返回值相同的，到页面也是相同的，这个时候可以使用全局结果页面配置<br>（2）在package标签里面配置<img src="/2019/04/04/struts学习记录-2/全局.PNG"></li>
+<li>局部结果页面<img src="/2019/04/04/struts学习记录-2/局部.PNG">
+注意：1.既配置全局页面，也配置了局部页面，最终以局部配置为准<br>2.result标签的type属性（怎么到路径里去：转发或重定向）<img src="/2019/04/04/struts学习记录-2/type.PNG">
+——–Action获取表单提交数据——–</li>
+</ul>
+<ol>
+<li>之前web阶段，提交表单到servlet里面，在servlet里面使用request对象里面的方法获取:getParameter，getParameterMap<br>2 .提交表单到action，但是action没有request对象，不能直接使用request对象<br>3 .action获取表单提交数据主要三种方式<br>（1）使用ActionContext类<br>-创建表单，提交表单到action中<br>-在action中使用ActionContext获得数据<img src="/2019/04/04/struts学习记录-2/actioncontext.PNG">
+（2）使用ServletActionContext类<img src="/2019/04/04/struts学习记录-2/sac.PNG">
+4.在action类操作域对象<br>-request，session，servletContext域对象<br>-使用ServletActionContext类操作<img src="/2019/04/04/struts学习记录-2/操作域对象.PNG">
+——–struts2封装获取表单数据方式——–<br>1.使用原始方式获取表单封装到实体类对象<img src="/2019/04/04/struts学习记录-2/原始方法.PNG">
+2.属性封装</li>
+</ol>
+<ul>
+<li>直接把表单提交属性封装到action的属性里面</li>
+<li>实现步骤<br>（1）在action成员变量位置定义变量<br>  变量名称和表单输入项的name属性值一样<br>（2）生成变量的set方法（把set和get方法都写出来）<img src="/2019/04/04/struts学习记录-2/属性封装.PNG"></li>
+<li>使用属性封装获取表单数据到属性里面，不能把数据直接封装到实体类对象里面<br>3.模型驱动封装</li>
+<li>使用模型驱动方式，可以直接把表单数据封装到实体类对象里面</li>
+<li>实现步骤<br>（1）action实现接口 ModelDriven<img src="/2019/04/04/struts学习记录-2/模型驱动封装.PNG">
+（2）实现接口里面的方法 getModel方法<br>把创建对象返回<br>（3）在action里面创建实体类对象<img src="/2019/04/04/struts学习记录-2/模型驱动封装2.PNG"></li>
+<li>使用模型驱动和属性封装注意问题：<br>在一个action中，获取表单数据可以属性封装，使用模型驱动封装，<br>不能同时使用属性封装和模型驱动封装获取同一个表单数据<br>如果同时使用，之后执行模型驱动<br>4.表达式封装<br>1 实现过程<br>（1）使用表达式封装可以把表单数据封装到实体类对象里面<br>第一步 在action里面声明实体类<br>第二步 生成实体类变量的set和get方法<img src="/2019/04/04/struts学习记录-2/表达式封装1.PNG">
+第三步 在表单输入项的name属性值里面写表达式形式<img src="/2019/04/04/struts学习记录-2/表达式封装2.PNG">
+</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>相同点：使用表达式封装和模型驱动封装都可以把数据封装到实体类对象里面</li>
+<li>不同点：<br>（1）使用模型驱动只能把数据封装到一个实体类对象里面，在一个action里面不能使用模型驱动把数据封装到不同的实体类对象里面<br>（2）使用表达式封装可以把数据封装到不同的实体类对象里面</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
