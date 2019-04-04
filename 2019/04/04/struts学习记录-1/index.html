@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-04-04</span>
-            <span class="time">16:11:42</span>
+            <span class="time">16:20:32</span>
           </span>
           
         </div>
@@ -108,13 +108,19 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>——–Struts2概述——–<br>1.struts2框架应用Javaee三层结构中web层的框架<br>2.struts2框架在struts1和webwork基础之上发展的全新框架<br>3.struts2可以解决的问题<br><br>4.web层常见框架<br>-struts2<br>-springMVC<br>——–struts2框架入门——–<br>第一步：导入jar包<br><img src="/2019/04/04/struts学习记录-1/导入jar包.PNG"><br>第二步：创建action(.java)<br><img src="/2019/04/04/struts学习记录-1/创建action.PNG"><br><img src="/2019/04/04/struts学习记录-1/第二步+.PNG"><br>第三步：创建struts2核心配置文件（名称[struts.xml]和位置[src下面]固定）<br>-引入dtd约束<br>&lt;!DOCTYPE struts PUBLIC<br>    “-//Apache Software Foundation//DTD Struts Configuration 2.3//EN”<br>    “<a href="http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;" target="_blank" rel="noopener">http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;</a><br><img src="/2019/04/04/struts学习记录-1/第三步.PNG"><br><img src="/2019/04/04/struts学习记录-1/第三步通配符.PNG"><br>第四步：配置struts过滤器(web.xml)<br><img src="/2019/04/04/struts学习记录-1/第四步.PNG"></p>
-<p>注意：struts2核心配置文件struts.xml主要有三个标签<br>package标签：<br>1.类似于代码包，用于区别不同的action，要配置action，必须首先写package标签，在package里面才能配置action<br>2.package标签属性<br>-name属性：可以随便写。在一个配置文件中可以写多个package标签，但name属性值不能相同<br>-extends属性：属性值固定是struts-default。只有写了这个属性之后，才能使在package里面配置的类具有action功能<br>-namespace属性：namespace属性值和action标签里面的name属性值构成访问路径(“/“)<br>action标签：<br>1.action标签配置action访问路径<br>2.action标签属性<br>-name属性：namespace属性值和action标签里面的name属性值构成访问路径<br>在同一个package标签里面写多个action标签，但是action的name属性值不能相同的<br>-class属性：action类全路径<br>-method属性：比如在action里面默认执行的方法execute方法，但是在action里面写其他的方法<br>让action里面多个方法执行，使用method进行配置<br>result标签：<br>1.根据action的方法返回值，配置到不同的路径里面<br>2.result标签属性<br>-name属性：和action类中的方法返回值一样<br>-type属性：配置如何到路径中（转发或者重定向）type属性默认值 做转发操作</p>
-<p>注意：使用action标签method属性<br>使用场景：<br>1.创建action，创建多个方法<br><img src="/2019/04/04/struts学习记录-1/method.PNG"><br>2.配置method<br><img src="/2019/04/04/struts学习记录-1/method2.PNG"><br>缺陷：action每个方法都需要配置，如果action里面有多个方法，配置很多的action<br>解决方法<br>使用通配符实现（重点）<br><img src="/2019/04/04/struts学习记录-1/解决方法1.PNG"><br><img src="/2019/04/04/struts学习记录-1/解决方法2.PNG"><br>注意：Action类编写方式<br>第一种：创建普通类，这个不继承任何类，不实现任何接口<br><img src="/2019/04/04/struts学习记录-1/action第一种.PNG"><br>第二种：创建类，实现接口 Action<br><img src="/2019/04/04/struts学习记录-1/action第二种.PNG"><br>第三种：创建类，继承类 ActionSupport（一般使用）<br><img src="/2019/04/04/struts学习记录-1/action第三种.PNG"><br>——–struts2执行过程——–<br>url（localhost:8080/文件名/hello.action）-&gt;过滤器，在服务器启动时创建，创建过滤器时执行init()方法（1.获取请求路径，得到路径里面的hello值<br><img src="/2019/04/04/struts学习记录-1/过程.PNG"><br>——–查看过滤器源代码(web.xml)——–<br>1 过滤器在服务器启动时候创建，创建过滤器时候执行init方法<br>（1）在init方法中主要加载配置文件</p>
+          <p>——–Struts2概述——–<br>1.struts2框架应用Javaee三层结构中web层的框架<br>2.struts2框架在struts1和webwork基础之上发展的全新框架<br>3.struts2可以解决的问题<br><img src="/2019/04/04/struts学习记录-1/解决问题.PNG"><br>4.web层常见框架<br>-struts2<br>-springMVC<br>——–struts2框架入门——–<br>第一步：导入jar包<br><img src="/2019/04/04/struts学习记录-1/导入jar包.PNG"><br>第二步：创建action(.java)<br><img src="/2019/04/04/struts学习记录-1/创建action.PNG"></p>
+<p>第三步：创建struts2核心配置文件（名称[struts.xml]和位置[src下面]固定）<br>-引入dtd约束<br>&lt;!DOCTYPE struts PUBLIC<br>    “-//Apache Software Foundation//DTD Struts Configuration 2.3//EN”<br>    “<a href="http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;" target="_blank" rel="noopener">http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;</a><br><img src="/2019/04/04/struts学习记录-1/第三步.PNG"></p>
+<p>第四步：配置struts过滤器(web.xml)<br><img src="/2019/04/04/struts学习记录-1/第四步.PNG"></p>
+<p>注意：struts2核心配置文件struts.xml主要有三个标签<br>package标签：<br>1.类似于代码包，用于区别不同的action，要配置action，必须首先写package标签，在package里面才能配置action<br>2.package标签属性</p>
 <ul>
-<li>包含自己创建的配置文件和struts2自带配置文件<br><strong> struts.xml
-</strong> web.xml</li>
+<li>name属性：可以随便写。在一个配置文件中可以写多个package标签，但name属性值不能相同</li>
+<li>extends属性：属性值固定是struts-default。只有写了这个属性之后，才能使在package里面配置的类具有action功能</li>
+<li>namespace属性：namespace属性值和action标签里面的name属性值构成访问路径(“/“)</li>
 </ul>
+<p>action标签：<br>1.action标签配置action访问路径<br>2.action标签属性<br>-name属性：namespace属性值和action标签里面的name属性值构成访问路径<br>在同一个package标签里面写多个action标签，但是action的name属性值不能相同的<br>-class属性：action类全路径<br>-method属性：比如在action里面默认执行的方法execute方法，但是在action里面写其他的方法<br>让action里面多个方法执行，使用method进行配置</p>
+<p>result标签：<br>1.根据action的方法返回值，配置到不同的路径里面<br>2.result标签属性<br>-name属性：和action类中的方法返回值一样<br>-type属性：配置如何到路径中（转发或者重定向）type属性默认值 做转发操作</p>
+<p>注意：使用action标签method属性<br>使用场景：<br>1.创建action，创建多个方法<br><img src="/2019/04/04/struts学习记录-1/method.PNG"><br>2.配置method<br><img src="/2019/04/04/struts学习记录-1/method2.PNG"><br>缺陷：action每个方法都需要配置，如果action里面有多个方法，配置很多的action<br>解决方法<br>使用通配符实现（重点）<br><img src="/2019/04/04/struts学习记录-1/解决方法1.PNG"><br><img src="/2019/04/04/struts学习记录-1/解决方法2.PNG"><br>注意：Action类编写方式<br>第一种：创建普通类，这个不继承任何类，不实现任何接口<br><img src="/2019/04/04/struts学习记录-1/action第一种.PNG"><br>第二种：创建类，实现接口 Action<br><img src="/2019/04/04/struts学习记录-1/action第二种.PNG"><br>第三种：创建类，继承类 ActionSupport（一般使用）<br><img src="/2019/04/04/struts学习记录-1/action第三种.PNG"><br>——–struts2执行过程——–<br>url（localhost:8080/文件名/hello.action）-&gt;过滤器，在服务器启动时创建，创建过滤器时执行init()方法（1.获取请求路径，得到路径里面的hello值<br><img src="/2019/04/04/struts学习记录-1/过程.PNG"><br>——–查看过滤器源代码(web.xml)——–<br>1 过滤器在服务器启动时候创建，创建过滤器时候执行init方法<br>（1）在init方法中主要加载配置文件<br>-包含自己创建的配置文件和struts2自带配置文件<br><strong> struts.xml<br>web.xml
+</strong> </p>
 
         </div>
       </div>
