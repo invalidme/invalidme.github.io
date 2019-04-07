@@ -1,152 +1,220 @@
 <!DOCTYPE html>
 <html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="zhang">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="构建hexo个人博客">
-  <meta property="og:description" content>
-  <meta property="og:site_name" content="Hexo">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://yoursite.com">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
   
   
-    <link rel="icon" href="/favicon.png">
+  <meta name="description" content="1.安装nodejs 地址栏输入 2.下载最新版nodejs  3.下载安装git  4.命令提示符内安装cnpm  5.查看cnpm版本(选)  6.用cnpm安装hexo框架  7.查看hexo版本(选)  8.开始搭建个人博客,首先创建个人文件夹  9.生成hexo个人博客  10.启动hex">
   
 
-  <!-- Site Title -->
-  <title>Hexo</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
   
-  <link rel="stylesheet" href="/css/style.light.css">
-
-  <!-- Google Analytics -->
+  
+  
+  
+  
+  
+  <title>构建hexo个人博客 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.安装nodejs 地址栏输入 2.下载最新版nodejs  3.下载安装git  4.命令提示符内安装cnpm  5.查看cnpm版本(选)  6.用cnpm安装hexo框架  7.查看hexo版本(选)  8.开始搭建个人博客,首先创建个人文件夹  9.生成hexo个人博客  10.启动hexo并查看本地hexo  11.写一篇新博客 写完后生成文章 12.查看新博客  13.部署到远端(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建hexo个人博客">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/构建hexo个人博客/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.安装nodejs 地址栏输入 2.下载最新版nodejs  3.下载安装git  4.命令提示符内安装cnpm  5.查看cnpm版本(选)  6.用cnpm安装hexo框架  7.查看hexo版本(选)  8.开始搭建个人博客,首先创建个人文件夹  9.生成hexo个人博客  10.启动hexo并查看本地hexo  11.写一篇新博客 写完后生成文章 12.查看新博客  13.部署到远端(">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/登陆nodejs官网.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/下载nodejs.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/安装git.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/安装cnpm.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/cnpm版本.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/安装hexo框架.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/hexo版本.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/创建新文件夹.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/init.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/本地查看hexo.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/本地hexo.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/xie.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/xie2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/开始写.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/写完后回.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/查看博客.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/网站.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/仓库后.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/重要配置.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/阿里云解析域名.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/捕获5.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:00:23.500Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建hexo个人博客">
+<meta name="twitter:description" content="1.安装nodejs 地址栏输入 2.下载最新版nodejs  3.下载安装git  4.命令提示符内安装cnpm  5.查看cnpm版本(选)  6.用cnpm安装hexo框架  7.查看hexo版本(选)  8.开始搭建个人博客,首先创建个人文件夹  9.生成hexo个人博客  10.启动hexo并查看本地hexo  11.写一篇新博客 写完后生成文章 12.查看新博客  13.部署到远端(">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/26/构建hexo个人博客/登陆nodejs官网.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-</head>
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
 
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">构建hexo个人博客</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/<your-github-username>">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:<your-email-address>">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
 </header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By zhang</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-03-26</span>
-            <span class="time">13:44:34</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-构建hexo个人博客" class="post-构建hexo个人博客 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
         
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p><strong> 1.安装nodejs </strong><br>地址栏输入<br><img src="/2019/03/26/构建hexo个人博客/登陆nodejs官网.PNG"><br><strong> 2.下载最新版nodejs </strong><br><img src="/2019/03/26/构建hexo个人博客/下载nodejs.PNG"><br><strong> 3.下载安装git </strong><br><img src="/2019/03/26/构建hexo个人博客/安装git.PNG"><br><strong> 4.命令提示符内安装cnpm </strong><br><img src="/2019/03/26/构建hexo个人博客/安装cnpm.PNG"><br><strong> 5.查看cnpm版本(选) </strong><br><img src="/2019/03/26/构建hexo个人博客/cnpm版本.PNG"><br><strong> 6.用cnpm安装hexo框架 </strong><br><img src="/2019/03/26/构建hexo个人博客/安装hexo框架.jpg"><br><strong> 7.查看hexo版本(选) </strong><br><img src="/2019/03/26/构建hexo个人博客/hexo版本.PNG"><br><strong> 8.开始搭建个人博客,首先创建个人文件夹 </strong><br><img src="/2019/03/26/构建hexo个人博客/创建新文件夹.PNG"><br><strong> 9.生成hexo个人博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/init.PNG"><br><strong> 10.启动hexo并查看本地hexo </strong><br><img src="/2019/03/26/构建hexo个人博客/本地查看hexo.PNG"><br><img src="/2019/03/26/构建hexo个人博客/本地hexo.PNG"><br><strong> 11.写一篇新博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/xie.PNG"><img src="/2019/03/26/构建hexo个人博客/xie2.PNG"><img src="/2019/03/26/构建hexo个人博客/开始写.PNG">写完后生成文章<img src="/2019/03/26/构建hexo个人博客/写完后回.PNG"><br><strong> 12.查看新博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/查看博客.jpg"><br><strong> 13.部署到远端(github),登陆github官网新建一个仓库 </strong><br><img src="/2019/03/26/构建hexo个人博客/网站.PNG"><br><strong> 14.安装部署插件 </strong><br><img src="/2019/03/26/构建hexo个人博客/仓库后.PNG"><br><strong> 15.设置_config.yml(重) </strong><br><img src="/2019/03/26/构建hexo个人博客/重要配置.PNG"><br><strong> 16. </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">     hexo g</span><br><span class="line">     hexo d</span><br></pre></td></tr></table></figure></p>
+        
+  
+    <h1 class="entry-title article-title">
+      构建hexo个人博客
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/03/26/构建hexo个人博客/" data-id="cju6lqquk0005cctuxhg9hhiz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong> 1.安装nodejs </strong><br>地址栏输入<br><img src="/2019/03/26/构建hexo个人博客/登陆nodejs官网.PNG"><br><strong> 2.下载最新版nodejs </strong><br><img src="/2019/03/26/构建hexo个人博客/下载nodejs.PNG"><br><strong> 3.下载安装git </strong><br><img src="/2019/03/26/构建hexo个人博客/安装git.PNG"><br><strong> 4.命令提示符内安装cnpm </strong><br><img src="/2019/03/26/构建hexo个人博客/安装cnpm.PNG"><br><strong> 5.查看cnpm版本(选) </strong><br><img src="/2019/03/26/构建hexo个人博客/cnpm版本.PNG"><br><strong> 6.用cnpm安装hexo框架 </strong><br><img src="/2019/03/26/构建hexo个人博客/安装hexo框架.jpg"><br><strong> 7.查看hexo版本(选) </strong><br><img src="/2019/03/26/构建hexo个人博客/hexo版本.PNG"><br><strong> 8.开始搭建个人博客,首先创建个人文件夹 </strong><br><img src="/2019/03/26/构建hexo个人博客/创建新文件夹.PNG"><br><strong> 9.生成hexo个人博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/init.PNG"><br><strong> 10.启动hexo并查看本地hexo </strong><br><img src="/2019/03/26/构建hexo个人博客/本地查看hexo.PNG"><br><img src="/2019/03/26/构建hexo个人博客/本地hexo.PNG"><br><strong> 11.写一篇新博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/xie.PNG"><img src="/2019/03/26/构建hexo个人博客/xie2.PNG"><img src="/2019/03/26/构建hexo个人博客/开始写.PNG">写完后生成文章<img src="/2019/03/26/构建hexo个人博客/写完后回.PNG"><br><strong> 12.查看新博客 </strong><br><img src="/2019/03/26/构建hexo个人博客/查看博客.jpg"><br><strong> 13.部署到远端(github),登陆github官网新建一个仓库 </strong><br><img src="/2019/03/26/构建hexo个人博客/网站.PNG"><br><strong> 14.安装部署插件 </strong><br><img src="/2019/03/26/构建hexo个人博客/仓库后.PNG"><br><strong> 15.设置_config.yml(重) </strong><br><img src="/2019/03/26/构建hexo个人博客/重要配置.PNG"><br><strong> 16. </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">     hexo g</span><br><span class="line">     hexo d</span><br></pre></td></tr></table></figure></p>
 <p><strong> 17.刷新仓库 </strong><br><strong> 18.域名解析 </strong><br><img src="/2019/03/26/构建hexo个人博客/阿里云解析域名.PNG"><br><strong> 19.把CMANE复制到source文件夹下 </strong><br><img src="/2019/03/26/构建hexo个人博客/捕获5.PNG"><br><strong> 20.over </strong><br><a href="http://baidu.com" target="_blank" rel="noopener">我的博客</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --deploy</span><br></pre></td></tr></table></figure></p>
 
-        </div>
-      </div>
-    </div>
-  </div>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/03/26/构建hexo个人博客/">
+    <time datetime="2019-03-26T04:58:39.000Z" class="entry-date">
+        2019-03-26
+    </time>
+</a>
+    
+    
+    </footer>
 </article>
 
 
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/03/30/hibernate学习记录-1/" rel="prev"><span class="meta-nav">←</span> hibernate学习记录_1</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/03/24/hello-world/" rel="next">Hello World <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
     </div>
-  </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-  </body>
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
 </html>
-

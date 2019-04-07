@@ -1,114 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="zhang">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="hibernate学习记录_1">
-  <meta property="og:description" content>
-  <meta property="og:site_name" content="Hexo">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://yoursite.com">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
   
   
-    <link rel="icon" href="/favicon.png">
+  <meta name="description" content="1.搭建hibernate环境2.hibernate核心api">
   
 
-  <!-- Site Title -->
-  <title>Hexo</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
   
-  <link rel="stylesheet" href="/css/style.light.css">
-
-  <!-- Google Analytics -->
+  
+  
+  
+  
+  
+  <title>hibernate学习记录_1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate学习记录_1">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/hibernate.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:18:34.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate学习记录_1">
+<meta name="twitter:description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/hibernate.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-</head>
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
 
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">hibernate学习记录_1</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/<your-github-username>">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:<your-email-address>">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
 </header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By zhang</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-03-30</span>
-            <span class="time">13:44:34</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hibernate学习记录-1" class="post-hibernate学习记录-1 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
         
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>1.搭建hibernate环境<br>2.hibernate核心api<br><a id="more"></a></p>
+        
+  
+    <h1 class="entry-title article-title">
+      hibernate学习记录_1
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/03/30/hibernate学习记录-1/" data-id="cju6lqquo0007cctur6nihu3e" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.搭建hibernate环境<br>2.hibernate核心api<br><a id="more"></a></p>
 <h1 id="主要内容-搭建hibernate环境"><a href="#主要内容-搭建hibernate环境" class="headerlink" title="主要内容:搭建hibernate环境"></a>主要内容:搭建hibernate环境</h1><h6 id="1-创建一个Java项目（hibernate-1）"><a href="#1-创建一个Java项目（hibernate-1）" class="headerlink" title="1.创建一个Java项目（hibernate_1）"></a>1.创建一个Java项目（hibernate_1）</h6><p>导入hibernate的jar包（src/lib）</p>
 <h6 id="2-创建实体类（javaBean）"><a href="#2-创建实体类（javaBean）" class="headerlink" title="2.创建实体类（javaBean）"></a>2.创建实体类（javaBean）</h6><p>src文件夹下创建一个包（com.zlj.entity）        entity:实体<br>包下创建一个类（User） 提示: 可通过hibernate创建表,不需要手动创建.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">                //hibernate要求实体类有一个属性(对应唯一字段)的值唯一 一般是id</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String pwd;</span><br><span class="line">	private String address;     </span><br><span class="line">                ........get和set方法.......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -135,42 +116,109 @@
 </ul>
 <p><strong> 2.主要两个方法: </strong><br>tx.commit();//提交<br>tx.rollback();//回滚 回到操作之前<br><strong> 3.什么是事务: </strong><br>原子性:一组操作要么全成功,要么全失败<br>一致性:操作之前之后数据总量不变<br>隔离性:多个事务同时操作一条记录,他们之间不会产生影响<br>持久性:提交后在数据库中生效</p>
 <h1 id="ps"><a href="#ps" class="headerlink" title="ps."></a>ps.</h1><img src="/2019/03/30/hibernate学习记录-1/hibernate.PNG">
-        </div>
-      </div>
-    </div>
-  </div>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/03/30/hibernate学习记录-1/">
+    <time datetime="2019-03-30T15:26:06.000Z" class="entry-date">
+        2019-03-30
+    </time>
+</a>
+    
+    
+    </footer>
 </article>
 
 
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/03/31/hibernate学习记录-2/" rel="prev"><span class="meta-nav">←</span> hibernate学习记录-2</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/03/26/构建hexo个人博客/" rel="next">构建hexo个人博客 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
     </div>
-  </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-  </body>
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
 </html>
-

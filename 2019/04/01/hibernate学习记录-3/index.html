@@ -1,114 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="zhang">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="hibernate学习记录-3">
-  <meta property="og:description" content>
-  <meta property="og:site_name" content="Hexo">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://yoursite.com">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
   
   
-    <link rel="icon" href="/favicon.png">
+  <meta name="description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
   
 
-  <!-- Site Title -->
-  <title>Hexo</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
   
-  <link rel="stylesheet" href="/css/style.light.css">
-
-  <!-- Google Analytics -->
+  
+  
+  
+  
+  
+  <title>hibernate学习记录-3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate学习记录-3">
+<meta property="og:url" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman实体类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/customer实体类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/customer映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/核心配置文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/工具类测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/方法1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/配置客户映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/方法2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/级联删除1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/级联删除2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/修改.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/修改2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多映射配置1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多映射配置2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多核心配置文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/工具类测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多级联保持1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多级联保存测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/维护表1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/维护表2.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:37:15.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate学习记录-3">
+<meta name="twitter:description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman实体类.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-</head>
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
 
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">hibernate学习记录-3</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/<your-github-username>">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:<your-email-address>">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
 </header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By zhang</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-04-01</span>
-            <span class="time">13:44:34</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hibernate学习记录-3" class="post-hibernate学习记录-3 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
         
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>1.Hibernate的一对多操作<br>2.一对多的级联操作<br>3.一对多的修改操作<br>4.Hibernate多对多操作<br>5.多对多级联操作<br>6.维护第三张表<br><a id="more"></a></p>
+        
+  
+    <h1 class="entry-title article-title">
+      hibernate学习记录-3
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/01/hibernate学习记录-3/" data-id="cju6lqqu00001cctu4t7jvosw" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.Hibernate的一对多操作<br>2.一对多的级联操作<br>3.一对多的修改操作<br>4.Hibernate多对多操作<br>5.多对多级联操作<br>6.维护第三张表<br><a id="more"></a></p>
 <h1 id="表功能"><a href="#表功能" class="headerlink" title="表功能"></a>表功能</h1><h5 id="Hibernate的一对多操作"><a href="#Hibernate的一对多操作" class="headerlink" title="Hibernate的一对多操作"></a>Hibernate的一对多操作</h5><p>一对多的映射配置<br><strong> 实体类： </strong><br><img src="/2019/04/01/hibernate学习记录-3/linkman实体类.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/customer实体类.PNG"><br><strong> 实体类的映射文件： </strong><br><img src="/2019/04/01/hibernate学习记录-3/linkman映射文件.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/customer映射文件.PNG"><br><strong> 核心配置文件： </strong><br><img src="/2019/04/01/hibernate学习记录-3/核心配置文件.PNG"><br><strong> 验证以上配置的工具类： </strong><br><img src="/2019/04/01/hibernate学习记录-3/工具类测试.PNG"></p>
 <h5 id="一对多的级联操作"><a href="#一对多的级联操作" class="headerlink" title="一对多的级联操作"></a>一对多的级联操作</h5><p><strong> 级联保存 </strong><br>添加一个客户，为这个客户添加多个联系人<br>以下操作：添加客户并为这个客户添加一个联系人<br>(1)第一种：<img src="/2019/04/01/hibernate学习记录-3/方法1.PNG"><br>(2)第二种：<br>一般根据客户(少)添加联系人(多)<br>第一步：配置客户的映射文件<br><img src="/2019/04/01/hibernate学习记录-3/配置客户映射文件.PNG"><br>第二步：代码：<img src="/2019/04/01/hibernate学习记录-3/方法2.PNG"></p>
 <p><strong> 级联删除 </strong><br>删除一个客户，这个客户里面的所有的联系人也删除<br>第一步：配置客户映射文件(set标签)<br><img src="/2019/04/01/hibernate学习记录-3/级联删除1.PNG"><br>第二步：代码<img src="/2019/04/01/hibernate学习记录-3/级联删除2.PNG"></p>
@@ -120,42 +123,109 @@
 <h5 id="维护第三张表"><a href="#维护第三张表" class="headerlink" title="维护第三张表"></a>维护第三张表</h5><p><strong> 1.让某个用户有某个角色 </strong><br>第一步：根据id查用户和角色<br>第二步：把角色放入用户里<br><img src="/2019/04/01/hibernate学习记录-3/维护表1.PNG"></p>
 <p><strong> 2.让某个用户没有某个角色 </strong><br>第一步：根据id查用户和角色<br>第二步：从用户里把角色去掉<br><img src="/2019/04/01/hibernate学习记录-3/维护表2.PNG"></p>
 
-        </div>
-      </div>
-    </div>
-  </div>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/01/hibernate学习记录-3/">
+    <time datetime="2019-04-01T07:53:41.000Z" class="entry-date">
+        2019-04-01
+    </time>
+</a>
+    
+    
+    </footer>
 </article>
 
 
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/04/02/hibernate学习记录-4/" rel="prev"><span class="meta-nav">←</span> hibernate学习记录-4</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/03/31/hibernate学习记录-2/" rel="next">hibernate学习记录-2 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
     </div>
-  </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-  </body>
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
 </html>
-
