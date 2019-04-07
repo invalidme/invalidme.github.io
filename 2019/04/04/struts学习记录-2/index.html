@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-04-04</span>
-            <span class="time">16:48:32</span>
+            <span class="time">11:29:01</span>
           </span>
           
         </div>
@@ -113,16 +113,11 @@
 <li>全局结果页面<br>创建两个action，执行默认的方法execute方法，让两个action的方法都返回success，返回success之后，配置到同一个页面里面<br>（1）如果多个action，方法里面返回值相同的，到页面也是相同的，这个时候可以使用全局结果页面配置<br>（2）在package标签里面配置<img src="/2019/04/04/struts学习记录-2/全局.PNG"></li>
 <li>局部结果页面<img src="/2019/04/04/struts学习记录-2/局部.PNG">
 注意：1.既配置全局页面，也配置了局部页面，最终以局部配置为准<br>2.result标签的type属性（怎么到路径里去：转发或重定向）<img src="/2019/04/04/struts学习记录-2/type.PNG">
-——–Action获取表单提交数据——–</li>
-</ul>
-<ol>
-<li>之前web阶段，提交表单到servlet里面，在servlet里面使用request对象里面的方法获取:getParameter，getParameterMap<br>2 .提交表单到action，但是action没有request对象，不能直接使用request对象<br>3 .action获取表单提交数据主要三种方式<br>（1）使用ActionContext类<br>-创建表单，提交表单到action中<br>-在action中使用ActionContext获得数据<img src="/2019/04/04/struts学习记录-2/actioncontext.PNG">
-（2）使用ServletActionContext类<img src="/2019/04/04/struts学习记录-2/sac.PNG">
-4.在action类操作域对象<br>-request，session，servletContext域对象<br>-使用ServletActionContext类操作<img src="/2019/04/04/struts学习记录-2/操作域对象.PNG">
+#Action获取表单提交数据<br>##之前web阶段，提交表单到servlet里面，在servlet里面使用request对象里面的方法获取:getParameter，getParameterMap<br>##提交表单到action，但是action没有request对象，不能直接使用request对象<br>##action获取表单提交数据主要三种方式<br>###使用ActionContext类<br>-创建表单，提交表单到action中<br>-在action中使用ActionContext获得数据<img src="/2019/04/04/struts学习记录-2/actioncontext.PNG">
+###使用ServletActionContext类<img src="/2019/04/04/struts学习记录-2/sac.PNG">
+##在action类操作域对象<br>-request，session，servletContext域对象<br>-使用ServletActionContext类操作<img src="/2019/04/04/struts学习记录-2/操作域对象.PNG">
 ——–struts2封装获取表单数据方式——–<br>1.使用原始方式获取表单封装到实体类对象<img src="/2019/04/04/struts学习记录-2/原始方法.PNG">
 2.属性封装</li>
-</ol>
-<ul>
 <li>直接把表单提交属性封装到action的属性里面</li>
 <li>实现步骤<br>（1）在action成员变量位置定义变量<br>  变量名称和表单输入项的name属性值一样<br>（2）生成变量的set方法（把set和get方法都写出来）<img src="/2019/04/04/struts学习记录-2/属性封装.PNG"></li>
 <li>使用属性封装获取表单数据到属性里面，不能把数据直接封装到实体类对象里面<br>3.模型驱动封装</li>
