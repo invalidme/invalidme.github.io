@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-04-04</span>
-            <span class="time">13:16:59</span>
+            <span class="time">13:44:34</span>
           </span>
           
         </div>
@@ -108,7 +108,8 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h1 id="结果页面配置"><a href="#结果页面配置" class="headerlink" title="结果页面配置"></a>结果页面配置</h1><ul>
+          <p>结果页面配置(全局结果页面和局部结果页面)<br>1.Action获取表单提交数据<br>2.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)<br><a id="more"></a></p>
+<h1 id="结果页面配置"><a href="#结果页面配置" class="headerlink" title="结果页面配置"></a>结果页面配置</h1><ul>
 <li>全局结果页面<br>创建两个action，执行默认的方法execute方法，让两个action的方法都返回success，返回success之后，配置到同一个页面里面<br>（1）如果多个action，方法里面返回值相同的，到页面也是相同的，这个时候可以使用全局结果页面配置<br>（2）在package标签里面配置<img src="/2019/04/04/struts学习记录-2/全局.PNG"></li>
 <li>局部结果页面<img src="/2019/04/04/struts学习记录-2/局部.PNG">
 注意：<br>1.既配置全局页面，也配置了局部页面，最终以局部配置为准<br>2.result标签的type属性（怎么到路径里去：转发或重定向）<img src="/2019/04/04/struts学习记录-2/type.PNG">
