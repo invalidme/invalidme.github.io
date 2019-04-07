@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.搭建hibernate环境2.hibernate核心api">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>hibernate学习记录_1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate学习记录_1">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/hibernate.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:18:34.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate学习记录_1">
+<meta name="twitter:description" content="1.搭建hibernate环境2.hibernate核心api">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/30/hibernate学习记录-1/hibernate.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hibernate学习记录-1" class="post-hibernate学习记录-1 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      hibernate学习记录_1
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/03/30/hibernate学习记录-1/" data-id="cju6lqquo0007cctur6nihu3e" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.搭建hibernate环境<br>2.hibernate核心api<br><a id="more"></a></p>
+<h1 id="主要内容-搭建hibernate环境"><a href="#主要内容-搭建hibernate环境" class="headerlink" title="主要内容:搭建hibernate环境"></a>主要内容:搭建hibernate环境</h1><h6 id="1-创建一个Java项目（hibernate-1）"><a href="#1-创建一个Java项目（hibernate-1）" class="headerlink" title="1.创建一个Java项目（hibernate_1）"></a>1.创建一个Java项目（hibernate_1）</h6><p>导入hibernate的jar包（src/lib）</p>
+<h6 id="2-创建实体类（javaBean）"><a href="#2-创建实体类（javaBean）" class="headerlink" title="2.创建实体类（javaBean）"></a>2.创建实体类（javaBean）</h6><p>src文件夹下创建一个包（com.zlj.entity）        entity:实体<br>包下创建一个类（User） 提示: 可通过hibernate创建表,不需要手动创建.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">                //hibernate要求实体类有一个属性(对应唯一字段)的值唯一 一般是id</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String pwd;</span><br><span class="line">	private String address;     </span><br><span class="line">                ........get和set方法.......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-创建hibernate映射配置文件-配置实体类和数据库表一一对应关系-xml格式"><a href="#3-创建hibernate映射配置文件-配置实体类和数据库表一一对应关系-xml格式" class="headerlink" title="3.创建hibernate映射配置文件(配置实体类和数据库表一一对应关系)(xml格式)"></a>3.创建hibernate映射配置文件(配置实体类和数据库表一一对应关系)(xml格式)</h6><p>注意:映射文件名称和位置没有固定要求(建议hbm.xml)</p>
+<p>在实体类所在包创建一个User.hbm.xml配置文件                  (hbm:hibernatemapping)<br>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE hibernate-mapping PUBLIC                         //配置所有xml文件都必须在配置文件中引入约束（dtd）</span><br><span class="line">    &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot;</span><br><span class="line">    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;hibernate-mapping&gt;</span><br><span class="line"></span><br><span class="line">//第一步:配置类和表对应</span><br><span class="line">&lt;class name=&quot;com.zlj.entity.user&quot; table=&quot;t_user&quot;&gt;            //class标签  name:实体类的全路径    table:表的名称 </span><br><span class="line">//第二步:配置实体类id和表内id对应</span><br><span class="line">   &lt;id name=&quot;id&quot; column=&quot;id&quot;&gt;                            // id标签 name:实体类中id属性名称   column属性:生成表内字段名称</span><br><span class="line">   &lt;generator class=&quot;native&quot;&gt;&lt;/generator&gt;        // 设置表内id增长策略,native:生成表id就会自动增长(主键)</span><br><span class="line">   &lt;/id&gt;</span><br><span class="line">//第三步</span><br><span class="line">&lt;property name=&quot;name&quot; column=&quot;name&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;pwd&quot; column=&quot;pwd&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;address&quot; column=&quot;address&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/class&gt;</span><br><span class="line">&lt;/hibernate-mapping&gt;</span><br></pre></td></tr></table></figure></p>
+<h6 id="4-创建hibernate核心配置文件-xml格式"><a href="#4-创建hibernate核心配置文件-xml格式" class="headerlink" title="4.创建hibernate核心配置文件(xml格式)"></a>4.创建hibernate核心配置文件(xml格式)</h6><p>注意:核心配置文件名称(hibernate.cfg.xml)和位置(src下面)固定<br>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE hibernate-configuration PUBLIC          //配置所有xml文件都必须在配置文件中引入约束（dtd） </span><br><span class="line">	&quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;</span><br><span class="line">	&quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;</span><br><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">&lt;session-factory&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--第一部分:配置数据库信息  --&gt;(必要)</span><br><span class="line">&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///db_database10&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.username&quot;&gt;root&lt;/property&gt;</span><br><span class="line">&lt;property name=&quot;hibernate.connection.password&quot;&gt;123&lt;/property&gt;</span><br><span class="line">&lt;!--第二部分:配置hibernate信息  --&gt;(非必要)</span><br><span class="line">&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;                                              //输出底层sql语句</span><br><span class="line">&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;                                           //输出底层sql语句格式 </span><br><span class="line">&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;                                 //hibernate自动创建表</span><br><span class="line">&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt; //配置数据库方言:让hibernate框架识别不同数据库自己特有的语句</span><br><span class="line">&lt;!--第三部分:把映射文件放到核心配置文件中  --&gt;(必要)</span><br><span class="line">&lt;mapping resource=&quot;com/zlj/entity/User.hbm.xml&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/session-factory&gt;</span><br><span class="line">&lt;/hibernate-configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<h6 id="5-测试功能-添加"><a href="#5-测试功能-添加" class="headerlink" title="5.测试功能(添加)"></a>5.测试功能(添加)</h6><p>首先在src下创建一个包(com.zlj.hibernatetest),包内放测试类(HibernateDemo)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.zlj.hibernatetest;</span><br><span class="line">import org.hibernate.Session;</span><br><span class="line">import org.hibernate.SessionFactory;</span><br><span class="line">import org.hibernate.Transaction;</span><br><span class="line">import org.hibernate.cfg.Configuration;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import com.zlj.entity.user;</span><br><span class="line"></span><br><span class="line">public class HibernateDemo &#123;</span><br><span class="line">	@Test</span><br><span class="line"> public void testAdd()&#123;</span><br><span class="line">           //第一步:加载hibernate核心配置文件 (hibernate里面封装了一个对象来实现加载)</span><br><span class="line">             (过程:到src下找到名称是hibernate.cfg.xml的文件,然后把此配置文件放到cfg对象中)</span><br><span class="line">	Configuration cfg=new Configuration();                                                                                                                                       </span><br><span class="line">	cfg.configure();</span><br><span class="line">                                                                     </span><br><span class="line">	 //第二步:使用configuration对象创建SessionFactory对象</span><br><span class="line">             (读取hibernate核心配置文件内容,创建sessionFactory,在过程中根据映射关系,在数据库中创建表)</span><br><span class="line">	SessionFactory sessionFactory=cfg.buildSessionFactory();</span><br><span class="line">	                                                                            </span><br><span class="line">            //第三步:使用SessionFactory创建session对象(类似于连接)</span><br><span class="line">	Session session=sessionFactory.openSession();                  </span><br><span class="line">            //第四部:开启事务                                                                         </span><br><span class="line">	Transaction tx=session.beginTransaction();	          </span><br><span class="line">	//第五步:写垃圾crud操作(仅此步骤不是固定的)</span><br><span class="line">	 (注意:调用session的方法实现添加)</span><br><span class="line">	User u=new User();                                                       </span><br><span class="line">	U.setName(&quot;小王&quot;);                                                       </span><br><span class="line">	U.setPwd(&quot;123&quot;);</span><br><span class="line">	U.setAddress(&quot;中国&quot;);</span><br><span class="line">	session.save(U);</span><br><span class="line">	//第六步:提交事务</span><br><span class="line">	 tx.commit();                                                                       </span><br><span class="line">              //第七步:关闭资源</span><br><span class="line">	 session.close();                                                                  </span><br><span class="line">	 sessionFactory.close();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="hibernate核心api"><a href="#hibernate核心api" class="headerlink" title="hibernate核心api"></a>hibernate核心api</h1><ul>
+<li>Configuration:配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Configuration cfg=new Configuration();                                                                                                          </span><br><span class="line">	cfg.configure();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>(1)到src下找到一个叫hibernate.cfg.xml配置文件,创建对象,把配置文件放到对象里(加载核心配置文件)</p>
+<ul>
+<li>SessionFactory:<br>创建sessionFactory时特别耗资源<br>解决:一个项目创建一个sessionFactory对象<br>写工具类，写静态代码块实现<br>静态代码块在类加载时执行,只执行一次<br>src下创建com.zlj.utils包,包内创建HibernateUtils工具类<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package com.zlj.utils;</span><br><span class="line">import org.hibernate.SessionFactory;</span><br><span class="line">import org.hibernate.cfg.Configuration;</span><br><span class="line"></span><br><span class="line">public class HibernateUtils &#123;</span><br><span class="line">	static Configuration cfg=null;</span><br><span class="line">	static SessionFactory sessionFactory=null;</span><br><span class="line">     static&#123;</span><br><span class="line">    	    cfg=new Configuration(); //加载核心配置文件</span><br><span class="line">    		cfg.configure();</span><br><span class="line">    		SessionFactory sessionFactory=cfg.buildSessionFactory();</span><br><span class="line">        &#125;</span><br><span class="line">     //提供方法返回sessionFactory  (静态方法类名直接调用)</span><br><span class="line">     public static SessionFactory getSessionFactory()&#123;</span><br><span class="line">    	 return sessionFactory;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>测试类中加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SessionFactory sessionFactory=HibernateUtils.getSessionFactory();</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>Session:<br><strong> 1.session类似于jdbc中的connection </strong><br><strong> 2.调用session里面不同的方法实现crud操作 </strong><br>(1)添加 调用save方法<br>(2)修改 调用update方法<br>(3)删除 调用delete方法<br>(4)根据id查询 调用get方法<br><strong> 3.session对象是单线程对象(如电脑管家各个功能)</strong><br>(1)session对象不能共用,只能自己使用</p>
+</li>
+<li><p>Transaction<br><strong> 1.事务的对象 </strong><br>用session中的方法开启事务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Transaction tx=session.beginTransaction();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong> 2.主要两个方法: </strong><br>tx.commit();//提交<br>tx.rollback();//回滚 回到操作之前<br><strong> 3.什么是事务: </strong><br>原子性:一组操作要么全成功,要么全失败<br>一致性:操作之前之后数据总量不变<br>隔离性:多个事务同时操作一条记录,他们之间不会产生影响<br>持久性:提交后在数据库中生效</p>
+<h1 id="ps"><a href="#ps" class="headerlink" title="ps."></a>ps.</h1><img src="/2019/03/30/hibernate学习记录-1/hibernate.PNG">
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/03/30/hibernate学习记录-1/">
+    <time datetime="2019-03-30T15:26:06.000Z" class="entry-date">
+        2019-03-30
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/03/31/hibernate学习记录-2/" rel="prev"><span class="meta-nav">←</span> hibernate学习记录-2</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/03/26/构建hexo个人博客/" rel="next">构建hexo个人博客 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

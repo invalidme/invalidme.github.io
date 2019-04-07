@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.结果页面配置(全局结果页面和局部结果页面)2.Action获取表单提交数据3.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>struts学习记录-2 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.结果页面配置(全局结果页面和局部结果页面)2.Action获取表单提交数据3.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struts学习记录-2">
+<meta property="og:url" content="http://yoursite.com/2019/04/04/struts学习记录-2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.结果页面配置(全局结果页面和局部结果页面)2.Action获取表单提交数据3.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/全局.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/局部.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/type.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/actioncontext.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/sac.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/操作域对象.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/原始方法.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/属性封装.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/模型驱动封装.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/模型驱动封装2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/表达式封装1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/表达式封装2.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:45:35.968Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="struts学习记录-2">
+<meta name="twitter:description" content="1.结果页面配置(全局结果页面和局部结果页面)2.Action获取表单提交数据3.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/04/struts学习记录-2/全局.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-struts学习记录-2" class="post-struts学习记录-2 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      struts学习记录-2
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/04/struts学习记录-2/" data-id="cju6lqqun0006cctu0ezm62y4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.结果页面配置(全局结果页面和局部结果页面)<br>2.Action获取表单提交数据<br>3.Struts2封装获取表单数据方式(原始方式,属性封装,模型驱动封装,表达式封装)<br><a id="more"></a></p>
+<h1 id="结果页面配置"><a href="#结果页面配置" class="headerlink" title="结果页面配置"></a>结果页面配置</h1><ul>
+<li>全局结果页面<br>创建两个action，执行默认的方法execute方法，让两个action的方法都返回success，返回success之后，配置到同一个页面里面<br>（1）如果多个action，方法里面返回值相同的，到页面也是相同的，这个时候可以使用全局结果页面配置<br>（2）在package标签里面配置<img src="/2019/04/04/struts学习记录-2/全局.PNG"></li>
+<li>局部结果页面<img src="/2019/04/04/struts学习记录-2/局部.PNG">
+注意：<br>1.既配置全局页面，也配置了局部页面，最终以局部配置为准<br>2.result标签的type属性（怎么到路径里去：转发或重定向）<img src="/2019/04/04/struts学习记录-2/type.PNG">
+<h1 id="Action获取表单提交数据"><a href="#Action获取表单提交数据" class="headerlink" title="Action获取表单提交数据"></a>Action获取表单提交数据</h1>1.之前web阶段，提交表单到servlet里面，在servlet里面使用request对象里面的方法获取:getParameter，getParameterMap<br>2.提交表单到action，但是action没有request对象，不能直接使用request对象<br>3.action获取表单提交数据主要三种方式<h6 id="1-使用ActionContext类"><a href="#1-使用ActionContext类" class="headerlink" title="1.使用ActionContext类"></a>1.使用ActionContext类</h6>-创建表单，提交表单到action中<br>-在action中使用ActionContext获得数据<img src="/2019/04/04/struts学习记录-2/actioncontext.PNG">
+<h6 id="2-使用ServletActionContext类"><a href="#2-使用ServletActionContext类" class="headerlink" title="2.使用ServletActionContext类"></a>2.使用ServletActionContext类</h6><img src="/2019/04/04/struts学习记录-2/sac.PNG">
+<h6 id="3-在action类操作域对象"><a href="#3-在action类操作域对象" class="headerlink" title="3.在action类操作域对象"></a>3.在action类操作域对象</h6>-request，session，servletContext域对象<br>-使用ServletActionContext类操作<img src="/2019/04/04/struts学习记录-2/操作域对象.PNG">
+<h1 id="struts2封装获取表单数据方式"><a href="#struts2封装获取表单数据方式" class="headerlink" title="struts2封装获取表单数据方式"></a>struts2封装获取表单数据方式</h1><h6 id="1-使用原始方式获取表单封装到实体类对象"><a href="#1-使用原始方式获取表单封装到实体类对象" class="headerlink" title="1.使用原始方式获取表单封装到实体类对象"></a>1.使用原始方式获取表单封装到实体类对象</h6><img src="/2019/04/04/struts学习记录-2/原始方法.PNG">
+<h6 id="2-属性封装"><a href="#2-属性封装" class="headerlink" title="2.属性封装"></a>2.属性封装</h6></li>
+<li>直接把表单提交属性封装到action的属性里面</li>
+<li>实现步骤<br>（1）在action成员变量位置定义变量<br>  变量名称和表单输入项的name属性值一样<br>（2）生成变量的set方法（把set和get方法都写出来）<img src="/2019/04/04/struts学习记录-2/属性封装.PNG"></li>
+<li>使用属性封装获取表单数据到属性里面，不能把数据直接封装到实体类对象里面<h4 id="3-模型驱动封装"><a href="#3-模型驱动封装" class="headerlink" title="3.模型驱动封装"></a>3.模型驱动封装</h4></li>
+<li>使用模型驱动方式，可以直接把表单数据封装到实体类对象里面</li>
+<li>实现步骤<br>（1）action实现接口 ModelDriven<img src="/2019/04/04/struts学习记录-2/模型驱动封装.PNG">
+（2）实现接口里面的方法 getModel方法<br>把创建对象返回<br>（3）在action里面创建实体类对象<img src="/2019/04/04/struts学习记录-2/模型驱动封装2.PNG"></li>
+<li>使用模型驱动和属性封装注意问题：<br>在一个action中，获取表单数据可以属性封装，使用模型驱动封装，<br>不能同时使用属性封装和模型驱动封装获取同一个表单数据<br>如果同时使用，之后执行模型驱动<h4 id="4-表达式封装"><a href="#4-表达式封装" class="headerlink" title="4.表达式封装"></a>4.表达式封装</h4></li>
+<li>实现过程<br>（1）使用表达式封装可以把表单数据封装到实体类对象里面<br>第一步 在action里面声明实体类<br>第二步 生成实体类变量的set和get方法<img src="/2019/04/04/struts学习记录-2/表达式封装1.PNG">
+</li>
+</ul>
+<p>第三步 在表单输入项的name属性值里面写表达式形式<br><img src="/2019/04/04/struts学习记录-2/表达式封装2.PNG"></p>
+<h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><ul>
+<li>相同点：使用表达式封装和模型驱动封装都可以把数据封装到实体类对象里面</li>
+<li>不同点：<br>（1）使用模型驱动只能把数据封装到一个实体类对象里面，在一个action里面不能使用模型驱动把数据封装到不同的实体类对象里面<br>（2）使用表达式封装可以把数据封装到不同的实体类对象里面</li>
+</ul>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/04/struts学习记录-2/">
+    <time datetime="2019-04-04T08:42:58.000Z" class="entry-date">
+        2019-04-04
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/04/struts学习记录-1/" rel="next">struts学习记录-1 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
