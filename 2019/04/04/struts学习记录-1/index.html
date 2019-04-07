@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.Struts2概述2.Struts2框架入门">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>struts学习记录-1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Struts2概述2.Struts2框架入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struts学习记录-1">
+<meta property="og:url" content="http://yoursite.com/2019/04/04/struts学习记录-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Struts2概述2.Struts2框架入门">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/解决问题.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/导入jar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/创建action.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/第三步.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/第四步.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/method.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/method2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/解决方法1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/解决方法2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/action第一种.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/action第二种.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/action第三种.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/过程.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:41:09.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="struts学习记录-1">
+<meta name="twitter:description" content="1.Struts2概述2.Struts2框架入门">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/04/struts学习记录-1/解决问题.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-struts学习记录-1" class="post-struts学习记录-1 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      struts学习记录-1
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/04/struts学习记录-1/" data-id="cju6lqqui0004cctuvpyx9atc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.Struts2概述<br>2.Struts2框架入门<br><a id="more"></a></p>
+<h1 id="Struts2概述"><a href="#Struts2概述" class="headerlink" title="Struts2概述"></a>Struts2概述</h1><p><strong> 1.struts2框架应用Javaee三层结构中web层的框架 </strong><br><strong> 2.struts2框架在struts1和webwork基础之上发展的全新框架 </strong><br><strong> 3.struts2可以解决的问题 </strong><br><img src="/2019/04/04/struts学习记录-1/解决问题.PNG"><br><strong> 4.web层常见框架 </strong><br>-struts2<br>-springMVC</p>
+<h1 id="Struts2框架入门"><a href="#Struts2框架入门" class="headerlink" title="Struts2框架入门"></a>Struts2框架入门</h1><h6 id="第一步：导入jar包"><a href="#第一步：导入jar包" class="headerlink" title="第一步：导入jar包"></a>第一步：导入jar包</h6><img src="/2019/04/04/struts学习记录-1/导入jar包.PNG">
+<h6 id="第二步：创建action-java"><a href="#第二步：创建action-java" class="headerlink" title="第二步：创建action(.java)"></a>第二步：创建action(.java)</h6><img src="/2019/04/04/struts学习记录-1/创建action.PNG">
+<h6 id="第三步：创建struts2核心配置文件（名称-struts-xml-和位置-src下面-固定）"><a href="#第三步：创建struts2核心配置文件（名称-struts-xml-和位置-src下面-固定）" class="headerlink" title="第三步：创建struts2核心配置文件（名称[struts.xml]和位置[src下面]固定）"></a>第三步：创建struts2核心配置文件（名称[struts.xml]和位置[src下面]固定）</h6><p>-引入dtd约束<br>&lt;!DOCTYPE struts PUBLIC<br>    “-//Apache Software Foundation//DTD Struts Configuration 2.3//EN”<br>    “<a href="http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;" target="_blank" rel="noopener">http://struts.apache.org/dtds/struts-2.3.dtd&quot;&gt;</a><br><img src="/2019/04/04/struts学习记录-1/第三步.PNG"></p>
+<h6 id="第四步：配置struts过滤器-web-xml"><a href="#第四步：配置struts过滤器-web-xml" class="headerlink" title="第四步：配置struts过滤器(web.xml)"></a>第四步：配置struts过滤器(web.xml)</h6><img src="/2019/04/04/struts学习记录-1/第四步.PNG">
+<h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><p><strong> struts2核心配置文件struts.xml主要有三个标签 </strong> </p>
+<h6 id="package标签："><a href="#package标签：" class="headerlink" title="package标签："></a>package标签：</h6><p>1.类似于代码包，用于区别不同的action，要配置action，必须首先写package标签，在package里面才能配置action<br>2.package标签属性</p>
+<ul>
+<li>name属性：可以随便写。在一个配置文件中可以写多个package标签，但name属性值不能相同</li>
+<li>extends属性：属性值固定是struts-default。只有写了这个属性之后，才能使在package里面配置的类具有action功能</li>
+<li>namespace属性：namespace属性值和action标签里面的name属性值构成访问路径(“/“)</li>
+</ul>
+<h6 id="action标签："><a href="#action标签：" class="headerlink" title="action标签："></a>action标签：</h6><p>1.action标签配置action访问路径<br>2.action标签属性</p>
+<ul>
+<li>name属性：namespace属性值和action标签里面的name属性值构成访问路径<br>在同一个package标签里面写多个action标签，但是action的name属性值不能相同的</li>
+<li>class属性：action类全路径</li>
+<li>method属性：比如在action里面默认执行的方法execute方法，但是在action里面写其他的方法<br>让action里面多个方法执行，使用method进行配置</li>
+</ul>
+<h6 id="result标签："><a href="#result标签：" class="headerlink" title="result标签："></a>result标签：</h6><p>1.根据action的方法返回值，配置到不同的路径里面<br>2.result标签属性</p>
+<ul>
+<li>name属性：和action类中的方法返回值一样</li>
+<li>type属性：配置如何到路径中（转发或者重定向）type属性默认值 做转发操作</li>
+</ul>
+<p>注意：使用action标签method属性<br>使用场景：<br><strong> 1.创建action，创建多个方法 </strong><br><img src="/2019/04/04/struts学习记录-1/method.PNG"><br><strong> 2.配置method </strong><br><img src="/2019/04/04/struts学习记录-1/method2.PNG"></p>
+<p>缺陷：action每个方法都需要配置，如果action里面有多个方法，配置很多的action<br>解决方法<br><strong> 使用通配符实现（重点） </strong><br><img src="/2019/04/04/struts学习记录-1/解决方法1.PNG"><br><img src="/2019/04/04/struts学习记录-1/解决方法2.PNG"><br>注意：Action类编写方式<br><strong> 第一种：创建普通类，这个不继承任何类，不实现任何接口 </strong><br><img src="/2019/04/04/struts学习记录-1/action第一种.PNG"><br><strong> 第二种：创建类，实现接口 Action </strong><br><img src="/2019/04/04/struts学习记录-1/action第二种.PNG"><br><strong> 第三种：创建类，继承类 ActionSupport（一般使用）<br><img src="/2019/04/04/struts学习记录-1/action第三种.PNG"> </strong> </p>
+<h1 id="struts2执行过程"><a href="#struts2执行过程" class="headerlink" title="struts2执行过程"></a>struts2执行过程</h1><p>url（localhost:8080/文件名/hello.action）-&gt;过滤器，在服务器启动时创建，创建过滤器时执行init()方法（1.获取请求路径，得到路径里面的hello值<br><img src="/2019/04/04/struts学习记录-1/过程.PNG"></p>
+<h1 id="查看过滤器源代码-web-xml"><a href="#查看过滤器源代码-web-xml" class="headerlink" title="查看过滤器源代码(web.xml)"></a>查看过滤器源代码(web.xml)</h1><p>1 过滤器在服务器启动时候创建，创建过滤器时候执行init方法<br>（1）在init方法中主要加载配置文件</p>
+<ul>
+<li>包含自己创建的配置文件和struts2自带配置文件<br><strong> struts.xml<br>web.xml
+</strong> </li>
+</ul>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/04/struts学习记录-1/">
+    <time datetime="2019-04-04T04:42:58.000Z" class="entry-date">
+        2019-04-04
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/04/04/struts学习记录-2/" rel="prev"><span class="meta-nav">←</span> struts学习记录-2</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/04/02/hibernate学习记录-4/" rel="next">hibernate学习记录-4 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

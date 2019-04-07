@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>hibernate学习记录-3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate学习记录-3">
+<meta property="og:url" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman实体类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/customer实体类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/customer映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/核心配置文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/工具类测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/方法1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/配置客户映射文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/方法2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/级联删除1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/级联删除2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/修改.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/修改2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多映射配置1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多映射配置2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多核心配置文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/工具类测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多级联保持1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/多对多级联保存测试.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/维护表1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/维护表2.PNG">
+<meta property="og:updated_time" content="2019-04-07T05:37:15.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate学习记录-3">
+<meta name="twitter:description" content="1.Hibernate的一对多操作2.一对多的级联操作3.一对多的修改操作4.Hibernate多对多操作5.多对多级联操作6.维护第三张表">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/01/hibernate学习记录-3/linkman实体类.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hibernate学习记录-3" class="post-hibernate学习记录-3 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      hibernate学习记录-3
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/01/hibernate学习记录-3/" data-id="cju6lqqu00001cctu4t7jvosw" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.Hibernate的一对多操作<br>2.一对多的级联操作<br>3.一对多的修改操作<br>4.Hibernate多对多操作<br>5.多对多级联操作<br>6.维护第三张表<br><a id="more"></a></p>
+<h1 id="表功能"><a href="#表功能" class="headerlink" title="表功能"></a>表功能</h1><h5 id="Hibernate的一对多操作"><a href="#Hibernate的一对多操作" class="headerlink" title="Hibernate的一对多操作"></a>Hibernate的一对多操作</h5><p>一对多的映射配置<br><strong> 实体类： </strong><br><img src="/2019/04/01/hibernate学习记录-3/linkman实体类.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/customer实体类.PNG"><br><strong> 实体类的映射文件： </strong><br><img src="/2019/04/01/hibernate学习记录-3/linkman映射文件.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/customer映射文件.PNG"><br><strong> 核心配置文件： </strong><br><img src="/2019/04/01/hibernate学习记录-3/核心配置文件.PNG"><br><strong> 验证以上配置的工具类： </strong><br><img src="/2019/04/01/hibernate学习记录-3/工具类测试.PNG"></p>
+<h5 id="一对多的级联操作"><a href="#一对多的级联操作" class="headerlink" title="一对多的级联操作"></a>一对多的级联操作</h5><p><strong> 级联保存 </strong><br>添加一个客户，为这个客户添加多个联系人<br>以下操作：添加客户并为这个客户添加一个联系人<br>(1)第一种：<img src="/2019/04/01/hibernate学习记录-3/方法1.PNG"><br>(2)第二种：<br>一般根据客户(少)添加联系人(多)<br>第一步：配置客户的映射文件<br><img src="/2019/04/01/hibernate学习记录-3/配置客户映射文件.PNG"><br>第二步：代码：<img src="/2019/04/01/hibernate学习记录-3/方法2.PNG"></p>
+<p><strong> 级联删除 </strong><br>删除一个客户，这个客户里面的所有的联系人也删除<br>第一步：配置客户映射文件(set标签)<br><img src="/2019/04/01/hibernate学习记录-3/级联删除1.PNG"><br>第二步：代码<img src="/2019/04/01/hibernate学习记录-3/级联删除2.PNG"></p>
+<h5 id="一对多的修改操作"><a href="#一对多的修改操作" class="headerlink" title="一对多的修改操作"></a>一对多的修改操作</h5><p><strong> 1.让联系人所属客户改变 </strong><br><img src="/2019/04/01/hibernate学习记录-3/修改.PNG"><br><strong> 2.inverse属性 </strong><br>因为hibernate双向维护外键，在客户和联系人里面都需要维护外键，修改客户时候修改一次外键，修改联系人时候也修改一次外键，造成效率问题<br>解决方式：让其中的一方不维护外键，在放弃关系维护映射文件中，进行配置，在set标签上使用inverse属性<br>代码：<img src="/2019/04/01/hibernate学习记录-3/修改2.PNG"></p>
+<h1 id="Hibernate多对多操作"><a href="#Hibernate多对多操作" class="headerlink" title="Hibernate多对多操作"></a>Hibernate多对多操作</h1><h5 id="多对多映射配置"><a href="#多对多映射配置" class="headerlink" title="多对多映射配置"></a>多对多映射配置</h5><p><strong> 第一步：创建实体类，让两个实体类之间互相表示 </strong><br><img src="/2019/04/01/hibernate学习记录-3/多对多1.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/多对多2.PNG"><br><strong> 第二步：配置映射文件 </strong><br><img src="/2019/04/01/hibernate学习记录-3/多对多映射配置1.PNG"><br><img src="/2019/04/01/hibernate学习记录-3/多对多映射配置2.PNG"><br><strong> 第三步：配置核心配置文件 </strong><br><img src="/2019/04/01/hibernate学习记录-3/多对多核心配置文件.PNG"><br><strong> 第四步：测试：run工具类测试 </strong><br><img src="/2019/04/01/hibernate学习记录-3/工具类测试.PNG"></p>
+<h5 id="多对多级联保存"><a href="#多对多级联保存" class="headerlink" title="多对多级联保存"></a>多对多级联保存</h5><p>根据用户保存角色<br>第一步：在用户配置文件中的set标签，cascade值save-update<br><img src="/2019/04/01/hibernate学习记录-3/多对多级联保持1.PNG"><br>第二步：代码<br><img src="/2019/04/01/hibernate学习记录-3/多对多级联保存测试.PNG"></p>
+<h5 id="多对多级联删除（了解）"><a href="#多对多级联删除（了解）" class="headerlink" title="多对多级联删除（了解）"></a>多对多级联删除（了解）</h5><p>第一步：在set标签，cascade值delete<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cascade=&quot;save-update,delete&quot;</span><br></pre></td></tr></table></figure></p>
+<p>第二步：代码部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User u=session.get(User.class,1);</span><br><span class="line">session.delete(u);</span><br></pre></td></tr></table></figure></p>
+<h5 id="维护第三张表"><a href="#维护第三张表" class="headerlink" title="维护第三张表"></a>维护第三张表</h5><p><strong> 1.让某个用户有某个角色 </strong><br>第一步：根据id查用户和角色<br>第二步：把角色放入用户里<br><img src="/2019/04/01/hibernate学习记录-3/维护表1.PNG"></p>
+<p><strong> 2.让某个用户没有某个角色 </strong><br>第一步：根据id查用户和角色<br>第二步：从用户里把角色去掉<br><img src="/2019/04/01/hibernate学习记录-3/维护表2.PNG"></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/01/hibernate学习记录-3/">
+    <time datetime="2019-04-01T07:53:41.000Z" class="entry-date">
+        2019-04-01
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/04/02/hibernate学习记录-4/" rel="prev"><span class="meta-nav">←</span> hibernate学习记录-4</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/03/31/hibernate学习记录-2/" rel="next">hibernate学习记录-2 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/hibernate学习记录-2/">hibernate学习记录-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
