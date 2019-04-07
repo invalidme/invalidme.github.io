@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-04-02</span>
-            <span class="time">12:36:52</span>
+            <span class="time">12:48:41</span>
           </span>
           
         </div>
@@ -108,7 +108,16 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>——–Hibernate查询方式——–<br>1.对象导航查询（如需求：根据id查询某个客户，再查询这个客户里面的所有联系人）<br><img src="/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG"><br>2.OID查询（根据id查询某一条记录，返回对象）<br>通过调用session里的get()方法查询<br>3.hql查询（创建Query对象，写hql语句实现查询）<br>使用hql查询时，要创建并使用Querry对象<br>–查询所有（重要）<br><img src="/2019/04/02/hibernate学习记录-4/hql查询所有.PNG"><br>–条件查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/条件查询.PNG"><br>–排序查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/排序查询.PNG"><br>–分页查询（重要）<br><img src="/2019/04/02/hibernate学习记录-4/分页查询.PNG"><br>–投影查询(SELECT id,name FROM t_customer)<br><img src="/2019/04/02/hibernate学习记录-4/投影查询.PNG"><br>–聚集函数的使用(count,sum,avg,max,min)<br>(SELECT COUNT(*) FROM t_customer)<br><img src="/2019/04/02/hibernate学习记录-4/聚集函数的使用.PNG"><br>4.QBC查询（Criteria对象）<br>5.本地sql查询（SQLQuery对象，写普通的sql语句实现查询）<br>——–Hibernate检索策略——–<br>检索策略的概念<br>第一类：立即查询<br>第二类：延迟查询</p>
+          <h1 id="Hibernate查询方式"><a href="#Hibernate查询方式" class="headerlink" title="Hibernate查询方式"></a>Hibernate查询方式</h1><p><strong> 1.对象导航查询（如需求：根据id查询某个客户，再查询这个客户里面的所有联系人） </strong><br><img src="/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG"><br><strong> 2.OID查询（根据id查询某一条记录，返回对象） </strong><br>通过调用session里的get()方法查询<br><strong> 3.hql查询（创建Query对象，写hql语句实现查询） </strong><br>使用hql查询时，要创建并使用Querry对象</p>
+<ul>
+<li>查询所有（重要）<img src="/2019/04/02/hibernate学习记录-4/hql查询所有.PNG"></li>
+<li>条件查询（重要）<img src="/2019/04/02/hibernate学习记录-4/条件查询.PNG"></li>
+<li>排序查询（重要）<img src="/2019/04/02/hibernate学习记录-4/排序查询.PNG"></li>
+<li>分页查询（重要）<img src="/2019/04/02/hibernate学习记录-4/分页查询.PNG"></li>
+<li>投影查询(SELECT id,name FROM t_customer)<img src="/2019/04/02/hibernate学习记录-4/投影查询.PNG"></li>
+<li>聚集函数的使用(count,sum,avg,max,min)<br>(SELECT COUNT(*) FROM t_customer)<img src="/2019/04/02/hibernate学习记录-4/聚集函数的使用.PNG">
+<strong> 4.QBC查询（Criteria对象） </strong><br><strong> 5.本地sql查询（SQLQuery对象，写普通的sql语句实现查询） </strong><h1 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h1><h5 id="检索策略的概念"><a href="#检索策略的概念" class="headerlink" title="检索策略的概念"></a>检索策略的概念</h5><strong> 第一类：立即查询 </strong><br><strong> 第二类：延迟查询 </strong></li>
+</ul>
 
         </div>
       </div>

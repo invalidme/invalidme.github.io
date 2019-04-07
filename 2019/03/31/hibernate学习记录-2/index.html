@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-03-31</span>
-            <span class="time">12:36:52</span>
+            <span class="time">12:48:41</span>
           </span>
           
         </div>
@@ -129,12 +129,10 @@
 测试：<img src="/2019/03/31/hibernate学习记录-2/测试.PNG">
 <strong>  4.获取与本地线程绑定session的时候，关闭了session以至于报错:org.hibernate.SessionException: Session was already closed </strong><br>解决：不需要手动关闭session<br>注意：写Session session=sessionFactory.openSession();   要手动关闭</li>
 </ul>
-<h1 id="Hibernate的api使用"><a href="#Hibernate的api使用" class="headerlink" title="Hibernate的api使用"></a>Hibernate的api使用</h1><h6 id="Query对象"><a href="#Query对象" class="headerlink" title="Query对象"></a>Query对象</h6><p><strong>  1.使用query对象，不需要写sql语句，但要写hql语句 </strong> </p>
+<h1 id="Hibernate的api使用"><a href="#Hibernate的api使用" class="headerlink" title="Hibernate的api使用"></a>Hibernate的api使用</h1><h6 id="Query对象"><a href="#Query对象" class="headerlink" title="Query对象"></a>Query对象</h6><p><strong> 1.使用query对象，不需要写sql语句，但要写hql语句 </strong><br>-hql：hibernate query language ：是hibernate提供的查询语言<br>-hql和sql的区别：使用sql来操作表和字段，而使用hql操作实体类和属性<br><strong> 2.查询所有hql语句：from 实体类的名称 </strong><br><strong> 3.怎么使用Query对象？ </strong><br>-创建Query对象<br>-调用Query对象里的方法来操作<br><img src="/2019/03/31/hibernate学习记录-2/query.PNG"></p>
+<h6 id="Criteria对象"><a href="#Criteria对象" class="headerlink" title="Criteria对象"></a>Criteria对象</h6><p><strong>  1.查询操作，但是使用这个对象的时候，不需要写语句，直接调用方法实现 </strong><br>怎么使用Criteria对象？<br>-创建Criteria对象<br>-调用Criteria对象里的方法来操作<br><img src="/2019/03/31/hibernate学习记录-2/criteria.PNG"></p>
+<h6 id="SQLQuery对象"><a href="#SQLQuery对象" class="headerlink" title="SQLQuery对象"></a>SQLQuery对象</h6><p><strong>  1.使用hibernate的时候，想用底层sql语句，可用SQLQuery对象来实现 </strong><br>怎么使用SQLQuery对象<br>-创建SQLQuery对象<br>-调用SQLQuery对象里的方法来操作</p>
 <ul>
-<li>hql：hibernate query language ：是hibernate提供的查询语言</li>
-<li>hql和sql的区别：使用sql来操作表和字段，而使用hql操作实体类和属性<br><strong> 2.查询所有hql语句：from 实体类的名称 </strong><br><strong>  3.怎么使用Query对象？ </strong><br>-创建Query对象<br>-调用Query对象里的方法来操作<img src="/2019/03/31/hibernate学习记录-2/query.PNG">
-<h6 id="Criteria对象"><a href="#Criteria对象" class="headerlink" title="Criteria对象"></a>Criteria对象</h6><strong>  1.查询操作，但是使用这个对象的时候，不需要写语句，直接调用方法实现 </strong><br>怎么使用Criteria对象？<br>-创建Criteria对象<br>-调用Criteria对象里的方法来操作<img src="/2019/03/31/hibernate学习记录-2/criteria.PNG">
-<h6 id="SQLQuery对象"><a href="#SQLQuery对象" class="headerlink" title="SQLQuery对象"></a>SQLQuery对象</h6><strong>  1.使用hibernate的时候，想用底层sql语句，可用SQLQuery对象来实现 </strong><br>怎么使用SQLQuery对象<br>-创建SQLQuery对象<br>-调用SQLQuery对象里的方法来操作</li>
 <li>First<img src="/2019/03/31/hibernate学习记录-2/sqlquery2.PNG"></li>
 <li>Second<img src="/2019/03/31/hibernate学习记录-2/sqlquery.PNG">
 </li>
