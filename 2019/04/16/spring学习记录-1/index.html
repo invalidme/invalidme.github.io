@@ -53,7 +53,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型2.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型1.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型3.PNG">
-<meta property="og:updated_time" content="2019-04-16T09:09:35.195Z">
+<meta property="og:updated_time" content="2019-04-16T09:21:07.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring学习记录-1">
 <meta name="twitter:description" content="1.Spring概念2.Spring的ioc操作3.配置文件没有提示问题4.Spring的bean管理（基于xml配置文件方式实现）5.Bean标签常用属性6.属性注入介绍7.注入对象类型属性（重点）8.P名称空间注入9.注入复杂类型属性10.Spring整合web项目原理">
@@ -120,7 +120,7 @@
     <div class="entry-content">
       
         <p>1.Spring概念<br>2.Spring的ioc操作<br>3.配置文件没有提示问题<br>4.Spring的bean管理（基于xml配置文件方式实现）<br>5.Bean标签常用属性<br>6.属性注入介绍<br>7.注入对象类型属性（重点）<br>8.P名称空间注入<br>9.注入复杂类型属性<br>10.Spring整合web项目原理<br><a id="more"></a></p>
-<p>#Spring概念<br><strong> 1.spring是开源的轻量级框架</strong><br><strong> 2.spring核心主要两部分：</strong><br>（1）aop：面向切面编程，扩展功能不是修改源代码实现<br>（2）ioc：控制反转，</p>
+<h1 id="Spring概念"><a href="#Spring概念" class="headerlink" title="Spring概念"></a>Spring概念</h1><p><strong> 1.spring是开源的轻量级框架</strong><br><strong> 2.spring核心主要两部分：</strong><br>（1）aop：面向切面编程，扩展功能不是修改源代码实现<br>（2）ioc：控制反转，</p>
 <ul>
 <li>比如有一个类，在类里面有方法（不是静态的方法），调用类里面的方法，创建类的对象，使用对象调用方法，创建类对象的过程，需要new出来对象</li>
 <li>把对象的创建不是通过new方式实现，而是交给spring配置创建类对象</li>
@@ -132,14 +132,14 @@
 <li>dao层：spring的jdbcTemplate</li>
 </ul>
 <p><strong> 4 spring版本</strong><br>（1）hibernate5.x<br>（2）spring4.x</p>
-<p>#Spring的ioc操作<br><strong> 1.把对象的创建交给spring进行管理叫ioc操作</strong><br><strong> 2.ioc操作两部分：</strong><br>（1）ioc的配置文件方式<br>（2）ioc的注解方式<br><strong> 3.ioc底层原理使用技术</strong><br>（1）xml配置文件<br>（2）dom4j解析xml<br>（3）工厂设计模式<br>（4）反射<br><strong> 4.ioc实现原理</strong><br>原：<br><img src="/2019/04/16/spring学习记录-1/工厂.PNG"><br>现：<br><img src="/2019/04/16/spring学习记录-1/ioc底层原理.PNG"></p>
-<p>#IOC入门<br><strong> 第一步 导入jar包</strong><br>jar包特点：每个功能的jar包都有三个<br><img src="/2019/04/16/spring学习记录-1/jar包.PNG"><br>做spring最基本功能时候，导入四个核心的jar包就可以了：<br><img src="/2019/04/16/spring学习记录-1/核心jar包.PNG"><br>最后导入支持日志输出的jar包（上面两个）：<br><img src="/2019/04/16/spring学习记录-1/日志jar包.PNG"><br><strong> 第二步 创建类，在类里面创建方法</strong><br><img src="/2019/04/16/spring学习记录-1/原始方法.PNG"><br><strong> 第三步 创建spring配置文件，配置创建的类</strong><br>注：hibernate和struts2的核心配置文件名称和位置都固定，但spring不固定<br>建议放到src下面，官方建议applicationContext.xml<br>1.引入schema约束<br><img src="/2019/04/16/spring学习记录-1/约束.PNG"><br><img src="/2019/04/16/spring学习记录-1/约束2.PNG"><br>2.配置<br><img src="/2019/04/16/spring学习记录-1/配置.PNG"><br><strong> 第四步 写代码测试对象创建</strong><br>注：仅供测试使用<br><img src="/2019/04/16/spring学习记录-1/测试类.PNG"></p>
-<p>#配置文件没有提示问题<br><strong> 1.spring引入schema约束，把约束文件引入到myeclipse中</strong><br>（1）复制约束路径<br><a href="http://www.springframework.org/schema/beans" target="_blank" rel="noopener">http://www.springframework.org/schema/beans</a> <a href="http://www.springframework.org/schema/beans/spring-beans.xsd" target="_blank" rel="noopener">http://www.springframework.org/schema/beans/spring-beans.xsd</a><br>（2）引入约束<br><img src="/2019/04/16/spring学习记录-1/引入约束.PNG"></p>
-<p>#Spring的bean管理（基于xml配置文件方式实现）<br>Bean实例化的三种方式</p>
+<h1 id="Spring的ioc操作"><a href="#Spring的ioc操作" class="headerlink" title="Spring的ioc操作"></a>Spring的ioc操作</h1><p><strong> 1.把对象的创建交给spring进行管理叫ioc操作</strong><br><strong> 2.ioc操作两部分：</strong><br>（1）ioc的配置文件方式<br>（2）ioc的注解方式<br><strong> 3.ioc底层原理使用技术</strong><br>（1）xml配置文件<br>（2）dom4j解析xml<br>（3）工厂设计模式<br>（4）反射<br><strong> 4.ioc实现原理</strong><br>原：<br><img src="/2019/04/16/spring学习记录-1/工厂.PNG"><br>现：<br><img src="/2019/04/16/spring学习记录-1/ioc底层原理.PNG"></p>
+<h1 id="IOC入门"><a href="#IOC入门" class="headerlink" title="IOC入门"></a>IOC入门</h1><p><strong> 第一步 导入jar包</strong><br>jar包特点：每个功能的jar包都有三个<br><img src="/2019/04/16/spring学习记录-1/jar包.PNG"><br>做spring最基本功能时候，导入四个核心的jar包就可以了：<br><img src="/2019/04/16/spring学习记录-1/核心jar包.PNG"><br>最后导入支持日志输出的jar包（上面两个）：<br><img src="/2019/04/16/spring学习记录-1/日志jar包.PNG"><br><strong> 第二步 创建类，在类里面创建方法</strong><br><img src="/2019/04/16/spring学习记录-1/原始方法.PNG"><br><strong> 第三步 创建spring配置文件，配置创建的类</strong><br>注：hibernate和struts2的核心配置文件名称和位置都固定，但spring不固定<br>建议放到src下面，官方建议applicationContext.xml<br>1.引入schema约束<br><img src="/2019/04/16/spring学习记录-1/约束.PNG"><br><img src="/2019/04/16/spring学习记录-1/约束2.PNG"><br>2.配置<br><img src="/2019/04/16/spring学习记录-1/配置.PNG"><br><strong> 第四步 写代码测试对象创建</strong><br>注：仅供测试使用<br><img src="/2019/04/16/spring学习记录-1/测试类.PNG"></p>
+<h1 id="配置文件没有提示问题"><a href="#配置文件没有提示问题" class="headerlink" title="配置文件没有提示问题"></a>配置文件没有提示问题</h1><p><strong> 1.spring引入schema约束，把约束文件引入到myeclipse中</strong><br>（1）复制约束路径<br><a href="http://www.springframework.org/schema/beans" target="_blank" rel="noopener">http://www.springframework.org/schema/beans</a> <a href="http://www.springframework.org/schema/beans/spring-beans.xsd" target="_blank" rel="noopener">http://www.springframework.org/schema/beans/spring-beans.xsd</a><br>（2）引入约束<br><img src="/2019/04/16/spring学习记录-1/引入约束.PNG"></p>
+<h1 id="Spring的bean管理（基于xml配置文件方式实现）"><a href="#Spring的bean管理（基于xml配置文件方式实现）" class="headerlink" title="Spring的bean管理（基于xml配置文件方式实现）"></a>Spring的bean管理（基于xml配置文件方式实现）</h1><p>Bean实例化的三种方式</p>
 <p><strong> 第一种 使用类的无参数构造方法创建（重点）</strong><br><img src="/2019/04/16/spring学习记录-1/bean实例化1.PNG"><br>运行测试类报错（没有默认的构造，即找不到无参的构造方法）</p>
 <p><strong> 第二种 使用静态工厂类创建</strong><br>在类里创建一个静态方法，返回类的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化21.PNG"><br>用配置文件的方式 通过静态工厂 创建Bean2的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化22.PNG"><br>可再写一个测试类测试</p>
 <p><strong> 第三种 使用实例工厂类创建</strong><br>在类里创建一个静态方法，返回类的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化31.PNG"><br><img src="/2019/04/16/spring学习记录-1/bean实例化32.PNG"><br>可再写一个测试类测试</p>
-<p>#Bean标签常用属性<br>（1）id属性：任意命名（最好与类名相似）</p>
+<h1 id="Bean标签常用属性"><a href="#Bean标签常用属性" class="headerlink" title="Bean标签常用属性"></a>Bean标签常用属性</h1><p>（1）id属性：任意命名（最好与类名相似）</p>
 <ul>
 <li>id属性值，不能包含特殊符号</li>
 <li>根据id值得到配置的对象</li>
@@ -157,15 +157,16 @@
 <li><p>request：创建对象把对象放到request域里面</p>
 </li>
 <li>session：创建对象把对象放到session域里面</li>
-<li>globalSession：创建对象把对象放到globalSession里面<br>#属性注入介绍<br>即：创建对象的时候，往类里面的属性设置（注入）值</li>
+<li>globalSession：创建对象把对象放到globalSession里面<h1 id="属性注入介绍"><a href="#属性注入介绍" class="headerlink" title="属性注入介绍"></a>属性注入介绍</h1>即：创建对象的时候，往类里面的属性设置（注入）值</li>
 </ul>
 <p><strong> 1 属性注入的方式介绍（三种方式）</strong><br>（1）使用set方法注入<br>（2）使用有参数构造注入<br>（3）使用接口注入<br>  <img src="/2019/04/16/spring学习记录-1/属性注入.PNG"></p>
 <p><strong> 2 在spring框架里面，支持前两种方式</strong><br>（1）set方法注入（重点）<br><img src="/2019/04/16/spring学习记录-1/set2.PNG"><br><img src="/2019/04/16/spring学习记录-1/set.PNG"><br>可再写一个测试类测试<br>（2）有参数构造注入<br>创建一个PeopertyDemo1类<br><img src="/2019/04/16/spring学习记录-1/有参构造注入2.PNG"><br><img src="/2019/04/16/spring学习记录-1/有参构造注入.PNG"><br>可再写一个测试类测试</p>
-<p>#注入对象类型属性（重点）<br><strong> 1 创建service类和dao类</strong><br>（1）在service得到dao对象<br><strong> 2 具体实现过程</strong><br>（1）在service里面把dao作为类型属性<br>（2）生成dao类型属性的set方法<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性1.PNG"><br>（3）在配置文件中完成注入关系<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性2.PNG"><br>（4）可再写一个测试类测试<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性测试类.PNG"></p>
-<p>#P名称空间注入<br><img src="/2019/04/16/spring学习记录-1/P1.PNG"><br><img src="/2019/04/16/spring学习记录-1/P2.PNG"></p>
-<p>#注入复杂类型属性<br><strong> 1 数组</strong><br><strong> 2 list集合</strong><br><strong> 3 map集合</strong><br><strong> 4 properties类型（键值对）</strong><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型2.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型1.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型3.PNG"></p>
-<p>#IOC和DI区别<br>（1）IOC: 控制反转，把对象的创建交给spring进行配置<br>（2）DI: 依赖注入，向类里面的属性中设置值<br>（3）关系：依赖注入不能单独存在，需要在ioc基础之上完成操作</p>
-<p>#Spring整合web项目原理<br><strong> 1 加载spring核心配置文件</strong> </p>
+<h1 id="注入对象类型属性（重点）"><a href="#注入对象类型属性（重点）" class="headerlink" title="注入对象类型属性（重点）"></a>注入对象类型属性（重点）</h1><p><strong> 1 创建service类和dao类</strong><br>（1）在service得到dao对象<br><strong> 2 具体实现过程</strong><br>（1）在service里面把dao作为类型属性<br>（2）生成dao类型属性的set方法<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性1.PNG"><br>（3）在配置文件中完成注入关系<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性2.PNG"><br>（4）可再写一个测试类测试<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性测试类.PNG"></p>
+<h1 id="P名称空间注入"><a href="#P名称空间注入" class="headerlink" title="P名称空间注入"></a>P名称空间注入</h1><img src="/2019/04/16/spring学习记录-1/P1.PNG">
+<img src="/2019/04/16/spring学习记录-1/P2.PNG">
+<h1 id="注入复杂类型属性"><a href="#注入复杂类型属性" class="headerlink" title="注入复杂类型属性"></a>注入复杂类型属性</h1><p><strong> 1 数组</strong><br><strong> 2 list集合</strong><br><strong> 3 map集合</strong><br><strong> 4 properties类型（键值对）</strong><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型2.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型1.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型3.PNG"></p>
+<h1 id="IOC和DI区别"><a href="#IOC和DI区别" class="headerlink" title="IOC和DI区别"></a>IOC和DI区别</h1><p>（1）IOC: 控制反转，把对象的创建交给spring进行配置<br>（2）DI: 依赖注入，向类里面的属性中设置值<br>（3）关系：依赖注入不能单独存在，需要在ioc基础之上完成操作</p>
+<h1 id="Spring整合web项目原理"><a href="#Spring整合web项目原理" class="headerlink" title="Spring整合web项目原理"></a>Spring整合web项目原理</h1><p><strong> 1 加载spring核心配置文件</strong> </p>
 <p>（1）需要new一个对象，功能可以实现，但效率很低</p>
 <p><strong> 2 实现思想：把加载配置文件和创建对象过程，在服务器启动时候完成</strong> </p>
 <p><strong> 3 实现原理</strong><br>（1）ServletContext对象<br>（2）监听器<br>（3）具体使用：</p>
