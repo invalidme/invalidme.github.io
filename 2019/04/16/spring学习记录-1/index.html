@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.Spring概念2.Spring的ioc操作3.配置文件没有提示问题4.Spring的bean管理（基于xml配置文件方式实现）5.Bean标签常用属性6.属性注入介绍7.注入对象类型属性（重点）8.P名称空间注入9.注入复杂类型属性10.Spring整合web项目原理">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>spring学习记录-1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Spring概念2.Spring的ioc操作3.配置文件没有提示问题4.Spring的bean管理（基于xml配置文件方式实现）5.Bean标签常用属性6.属性注入介绍7.注入对象类型属性（重点）8.P名称空间注入9.注入复杂类型属性10.Spring整合web项目原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring学习记录-1">
+<meta property="og:url" content="http://yoursite.com/2019/04/16/spring学习记录-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Spring概念2.Spring的ioc操作3.配置文件没有提示问题4.Spring的bean管理（基于xml配置文件方式实现）5.Bean标签常用属性6.属性注入介绍7.注入对象类型属性（重点）8.P名称空间注入9.注入复杂类型属性10.Spring整合web项目原理">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/工厂.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/ioc底层原理.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/jar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/核心jar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/日志jar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/原始方法.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/约束.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/约束2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/配置.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/测试类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/引入约束.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/bean实例化1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/bean实例化21.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/bean实例化22.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/bean实例化31.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/bean实例化32.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/单实例对象.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/多实例对象.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/属性注入.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/set2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/set.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/有参构造注入2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/有参构造注入.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入对象类型属性1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入对象类型属性2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入对象类型属性测试类.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/P1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/P2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/注入复杂类型3.PNG">
+<meta property="og:updated_time" content="2019-04-16T09:09:35.195Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring学习记录-1">
+<meta name="twitter:description" content="1.Spring概念2.Spring的ioc操作3.配置文件没有提示问题4.Spring的bean管理（基于xml配置文件方式实现）5.Bean标签常用属性6.属性注入介绍7.注入对象类型属性（重点）8.P名称空间注入9.注入复杂类型属性10.Spring整合web项目原理">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/16/spring学习记录-1/工厂.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-spring学习记录-1" class="post-spring学习记录-1 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      spring学习记录-1
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/16/spring学习记录-1/" data-id="cjujkra12000588tu7mkcjp61" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.Spring概念<br>2.Spring的ioc操作<br>3.配置文件没有提示问题<br>4.Spring的bean管理（基于xml配置文件方式实现）<br>5.Bean标签常用属性<br>6.属性注入介绍<br>7.注入对象类型属性（重点）<br>8.P名称空间注入<br>9.注入复杂类型属性<br>10.Spring整合web项目原理<br><a id="more"></a></p>
+<p>#Spring概念<br><strong> 1.spring是开源的轻量级框架</strong><br><strong> 2.spring核心主要两部分：</strong><br>（1）aop：面向切面编程，扩展功能不是修改源代码实现<br>（2）ioc：控制反转，</p>
+<ul>
+<li>比如有一个类，在类里面有方法（不是静态的方法），调用类里面的方法，创建类的对象，使用对象调用方法，创建类对象的过程，需要new出来对象</li>
+<li>把对象的创建不是通过new方式实现，而是交给spring配置创建类对象</li>
+</ul>
+<p><strong> 3.spring是一站式框架</strong><br>（1）spring在javaee三层结构中，每一层都提供不同的解决技术</p>
+<ul>
+<li>web层：springMVC</li>
+<li>service层：spring的ioc</li>
+<li>dao层：spring的jdbcTemplate</li>
+</ul>
+<p><strong> 4 spring版本</strong><br>（1）hibernate5.x<br>（2）spring4.x</p>
+<p>#Spring的ioc操作<br><strong> 1.把对象的创建交给spring进行管理叫ioc操作</strong><br><strong> 2.ioc操作两部分：</strong><br>（1）ioc的配置文件方式<br>（2）ioc的注解方式<br><strong> 3.ioc底层原理使用技术</strong><br>（1）xml配置文件<br>（2）dom4j解析xml<br>（3）工厂设计模式<br>（4）反射<br><strong> 4.ioc实现原理</strong><br>原：<br><img src="/2019/04/16/spring学习记录-1/工厂.PNG"><br>现：<br><img src="/2019/04/16/spring学习记录-1/ioc底层原理.PNG"></p>
+<p>#IOC入门<br><strong> 第一步 导入jar包</strong><br>jar包特点：每个功能的jar包都有三个<br><img src="/2019/04/16/spring学习记录-1/jar包.PNG"><br>做spring最基本功能时候，导入四个核心的jar包就可以了：<br><img src="/2019/04/16/spring学习记录-1/核心jar包.PNG"><br>最后导入支持日志输出的jar包（上面两个）：<br><img src="/2019/04/16/spring学习记录-1/日志jar包.PNG"><br><strong> 第二步 创建类，在类里面创建方法</strong><br><img src="/2019/04/16/spring学习记录-1/原始方法.PNG"><br><strong> 第三步 创建spring配置文件，配置创建的类</strong><br>注：hibernate和struts2的核心配置文件名称和位置都固定，但spring不固定<br>建议放到src下面，官方建议applicationContext.xml<br>1.引入schema约束<br><img src="/2019/04/16/spring学习记录-1/约束.PNG"><br><img src="/2019/04/16/spring学习记录-1/约束2.PNG"><br>2.配置<br><img src="/2019/04/16/spring学习记录-1/配置.PNG"><br><strong> 第四步 写代码测试对象创建</strong><br>注：仅供测试使用<br><img src="/2019/04/16/spring学习记录-1/测试类.PNG"></p>
+<p>#配置文件没有提示问题<br><strong> 1.spring引入schema约束，把约束文件引入到myeclipse中</strong><br>（1）复制约束路径<br><a href="http://www.springframework.org/schema/beans" target="_blank" rel="noopener">http://www.springframework.org/schema/beans</a> <a href="http://www.springframework.org/schema/beans/spring-beans.xsd" target="_blank" rel="noopener">http://www.springframework.org/schema/beans/spring-beans.xsd</a><br>（2）引入约束<br><img src="/2019/04/16/spring学习记录-1/引入约束.PNG"></p>
+<p>#Spring的bean管理（基于xml配置文件方式实现）<br>Bean实例化的三种方式</p>
+<p><strong> 第一种 使用类的无参数构造方法创建（重点）</strong><br><img src="/2019/04/16/spring学习记录-1/bean实例化1.PNG"><br>运行测试类报错（没有默认的构造，即找不到无参的构造方法）</p>
+<p><strong> 第二种 使用静态工厂类创建</strong><br>在类里创建一个静态方法，返回类的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化21.PNG"><br>用配置文件的方式 通过静态工厂 创建Bean2的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化22.PNG"><br>可再写一个测试类测试</p>
+<p><strong> 第三种 使用实例工厂类创建</strong><br>在类里创建一个静态方法，返回类的对象<br><img src="/2019/04/16/spring学习记录-1/bean实例化31.PNG"><br><img src="/2019/04/16/spring学习记录-1/bean实例化32.PNG"><br>可再写一个测试类测试</p>
+<p>#Bean标签常用属性<br>（1）id属性：任意命名（最好与类名相似）</p>
+<ul>
+<li>id属性值，不能包含特殊符号</li>
+<li>根据id值得到配置的对象</li>
+</ul>
+<p>（2）class属性：创建对象所在类的全路径</p>
+<p>（3）name属性(目前不用)：功能和id属性一样的，唯一区别：id属性值不能包含特殊符号，但是在name属性值里面可以包含特殊符号</p>
+<p>（4）scope属性（Bean的作用范围）</p>
+<ul>
+<li><p>singleton（掌握）：默认值，单实例对象</p>
+<img src="/2019/04/16/spring学习记录-1/单实例对象.PNG">
+</li>
+<li><p>prototype（掌握）：多实例对象</p>
+<img src="/2019/04/16/spring学习记录-1/多实例对象.PNG">
+</li>
+<li><p>request：创建对象把对象放到request域里面</p>
+</li>
+<li>session：创建对象把对象放到session域里面</li>
+<li>globalSession：创建对象把对象放到globalSession里面<br>#属性注入介绍<br>即：创建对象的时候，往类里面的属性设置（注入）值</li>
+</ul>
+<p><strong> 1 属性注入的方式介绍（三种方式）</strong><br>（1）使用set方法注入<br>（2）使用有参数构造注入<br>（3）使用接口注入<br>  <img src="/2019/04/16/spring学习记录-1/属性注入.PNG"></p>
+<p><strong> 2 在spring框架里面，支持前两种方式</strong><br>（1）set方法注入（重点）<br><img src="/2019/04/16/spring学习记录-1/set2.PNG"><br><img src="/2019/04/16/spring学习记录-1/set.PNG"><br>可再写一个测试类测试<br>（2）有参数构造注入<br>创建一个PeopertyDemo1类<br><img src="/2019/04/16/spring学习记录-1/有参构造注入2.PNG"><br><img src="/2019/04/16/spring学习记录-1/有参构造注入.PNG"><br>可再写一个测试类测试</p>
+<p>#注入对象类型属性（重点）<br><strong> 1 创建service类和dao类</strong><br>（1）在service得到dao对象<br><strong> 2 具体实现过程</strong><br>（1）在service里面把dao作为类型属性<br>（2）生成dao类型属性的set方法<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性1.PNG"><br>（3）在配置文件中完成注入关系<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性2.PNG"><br>（4）可再写一个测试类测试<br><img src="/2019/04/16/spring学习记录-1/注入对象类型属性测试类.PNG"></p>
+<p>#P名称空间注入<br><img src="/2019/04/16/spring学习记录-1/P1.PNG"><br><img src="/2019/04/16/spring学习记录-1/P2.PNG"></p>
+<p>#注入复杂类型属性<br><strong> 1 数组</strong><br><strong> 2 list集合</strong><br><strong> 3 map集合</strong><br><strong> 4 properties类型（键值对）</strong><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型2.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型1.PNG"><br><img src="/2019/04/16/spring学习记录-1/注入复杂类型3.PNG"></p>
+<p>#IOC和DI区别<br>（1）IOC: 控制反转，把对象的创建交给spring进行配置<br>（2）DI: 依赖注入，向类里面的属性中设置值<br>（3）关系：依赖注入不能单独存在，需要在ioc基础之上完成操作</p>
+<p>#Spring整合web项目原理<br><strong> 1 加载spring核心配置文件</strong> </p>
+<p>（1）需要new一个对象，功能可以实现，但效率很低</p>
+<p><strong> 2 实现思想：把加载配置文件和创建对象过程，在服务器启动时候完成</strong> </p>
+<p><strong> 3 实现原理</strong><br>（1）ServletContext对象<br>（2）监听器<br>（3）具体使用：</p>
+<ul>
+<li>在服务器启动时候，为每个项目创建一个ServletContext对象</li>
+<li>在ServletContext对象创建时候，使用监听器可以具体到ServletContext对象在什么时候创建</li>
+<li>使用监听器监听到ServletContext对象创建时候，<br>– 加载spring配置文件，把配置文件配置对象创建<br>– 把创建出来的对象放到ServletContext域对象里面（setAttribute方法）</li>
+<li>获取对象时候，到ServletContext域得到 （getAttribute方法）</li>
+</ul>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/16/spring学习记录-1/">
+    <time datetime="2019-04-16T08:58:17.000Z" class="entry-date">
+        2019-04-16
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/04/struts学习记录-2/" rel="next">struts学习记录-2 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://music.163.com/song/media/outer/url?id=31877327.mp3" controls="controls" style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/16/spring学习记录-1/">spring学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hibernate学习记录-3/">hibernate学习记录-3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
