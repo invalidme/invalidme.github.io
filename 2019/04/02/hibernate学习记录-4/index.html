@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="1.Hibernate查询方式(对象导航查询,OID查询,hql查询,QBC查询,本地sql查询)2.Hibernate检索策略">
+  <meta name="description" content="1.hibernate的查询方式2.对象导航查询3.HQL查询（1）查询所有（2）条件查询（3）排序查询（4）分页查询（5）投影查询（6）聚集函数使用4.QBC查询5.HQL多表查询-内连接、迫切内连接、左外连接、迫切左外连接、右外连接6.hibernate的检索策略（1）概念-hibernate分成 ：立即和延迟查询-延迟查询分成：类级别和关联级别延迟（2）具体操作">
   
 
   
@@ -15,12 +15,12 @@
   
   <title>hibernate学习记录-4 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Hibernate查询方式(对象导航查询,OID查询,hql查询,QBC查询,本地sql查询)2.Hibernate检索策略">
+  <meta name="description" content="1.hibernate的查询方式2.对象导航查询3.HQL查询（1）查询所有（2）条件查询（3）排序查询（4）分页查询（5）投影查询（6）聚集函数使用4.QBC查询5.HQL多表查询-内连接、迫切内连接、左外连接、迫切左外连接、右外连接6.hibernate的检索策略（1）概念-hibernate分成 ：立即和延迟查询-延迟查询分成：类级别和关联级别延迟（2）具体操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hibernate学习记录-4">
 <meta property="og:url" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.Hibernate查询方式(对象导航查询,OID查询,hql查询,QBC查询,本地sql查询)2.Hibernate检索策略">
+<meta property="og:description" content="1.hibernate的查询方式2.对象导航查询3.HQL查询（1）查询所有（2）条件查询（3）排序查询（4）分页查询（5）投影查询（6）聚集函数使用4.QBC查询5.HQL多表查询-内连接、迫切内连接、左外连接、迫切左外连接、右外连接6.hibernate的检索策略（1）概念-hibernate分成 ：立即和延迟查询-延迟查询分成：类级别和关联级别延迟（2）具体操作">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/hql查询所有.PNG">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/分页查询.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/投影查询.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/聚集函数的使用.PNG">
-<meta property="og:updated_time" content="2019-04-07T05:41:19.080Z">
+<meta property="og:updated_time" content="2019-04-17T03:48:58.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hibernate学习记录-4">
-<meta name="twitter:description" content="1.Hibernate查询方式(对象导航查询,OID查询,hql查询,QBC查询,本地sql查询)2.Hibernate检索策略">
+<meta name="twitter:description" content="1.hibernate的查询方式2.对象导航查询3.HQL查询（1）查询所有（2）条件查询（3）排序查询（4）分页查询（5）投影查询（6）聚集函数使用4.QBC查询5.HQL多表查询-内连接、迫切内连接、左外连接、迫切左外连接、右外连接6.hibernate的检索策略（1）概念-hibernate分成 ：立即和延迟查询-延迟查询分成：类级别和关联级别延迟（2）具体操作">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG">
   
   
@@ -95,7 +95,7 @@
 
     <div class="entry-content">
       
-        <p>1.Hibernate查询方式(对象导航查询,OID查询,hql查询,QBC查询,本地sql查询)<br>2.Hibernate检索策略<br><a id="more"></a></p>
+        <p>1.hibernate的查询方式<br>2.对象导航查询<br>3.HQL查询<br>（1）查询所有<br>（2）条件查询<br>（3）排序查询<br>（4）分页查询<br>（5）投影查询<br>（6）聚集函数使用<br>4.QBC查询<br>5.HQL多表查询<br>-内连接、迫切内连接、左外连接、迫切左外连接、右外连接<br>6.hibernate的检索策略<br>（1）概念<br>-hibernate分成 ：立即和延迟查询<br>-延迟查询分成：类级别和关联级别延迟<br>（2）具体操作<br><a id="more"></a></p>
 <h1 id="Hibernate查询方式"><a href="#Hibernate查询方式" class="headerlink" title="Hibernate查询方式"></a>Hibernate查询方式</h1><p><strong> 1.对象导航查询（如需求：根据id查询某个客户，再查询这个客户里面的所有联系人） </strong><br><img src="/2019/04/02/hibernate学习记录-4/对象导航查询1.PNG"><br><strong> 2.OID查询（根据id查询某一条记录，返回对象） </strong><br>通过调用session里的get()方法查询<br><strong> 3.hql查询（创建Query对象，写hql语句实现查询） </strong><br>使用hql查询时，要创建并使用Querry对象</p>
 <ul>
 <li>查询所有（重要）<img src="/2019/04/02/hibernate学习记录-4/hql查询所有.PNG"></li>
