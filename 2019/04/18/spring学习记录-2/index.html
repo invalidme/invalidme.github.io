@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.spring的bean管理（注解）（1）注解介绍（2）Spring注解开发准备（3）使用注解创建对象（4）使用注解注入属性（5）配置文件和注解混合使用2.AOP（1）aop概述（2）aop底层原理（3）aop操作相关术语-切入点-增强-切面3.spring的aop操作（基于aspectj的xml方式）4.log4j介绍5.spring整合web项目演示">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>spring学习记录-2 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.spring的bean管理（注解）（1）注解介绍（2）Spring注解开发准备（3）使用注解创建对象（4）使用注解注入属性（5）配置文件和注解混合使用2.AOP（1）aop概述（2）aop底层原理（3）aop操作相关术语-切入点-增强-切面3.spring的aop操作（基于aspectj的xml方式）4.log4j介绍5.spring整合web项目演示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring学习记录-2">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/spring学习记录-2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.spring的bean管理（注解）（1）注解介绍（2）Spring注解开发准备（3）使用注解创建对象（4）使用注解注入属性（5）配置文件和注解混合使用2.AOP（1）aop概述（2）aop底层原理（3）aop操作相关术语-切入点-增强-切面3.spring的aop操作（基于aspectj的xml方式）4.log4j介绍5.spring整合web项目演示">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/基本jar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/基本jar包2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/约束.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/注解扫描.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/注解创建对象.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/测试代码.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/多实例.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/dao.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/service.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/定义类型属性.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/第二个注解.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/配置对象.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/注入属性.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/原理.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/第一种.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/第二种.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/aop术语.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/aopjar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/aop约束.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/aop配置.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/环绕增强.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/环绕增强2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/测试环绕增强.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/log4jjar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/log4j配置文件.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/级别.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/存在的问题.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/sbjar包.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/监听器.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/1.PNG">
+<meta property="og:updated_time" content="2019-04-18T03:00:41.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring学习记录-2">
+<meta name="twitter:description" content="1.spring的bean管理（注解）（1）注解介绍（2）Spring注解开发准备（3）使用注解创建对象（4）使用注解注入属性（5）配置文件和注解混合使用2.AOP（1）aop概述（2）aop底层原理（3）aop操作相关术语-切入点-增强-切面3.spring的aop操作（基于aspectj的xml方式）4.log4j介绍5.spring整合web项目演示">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/18/spring学习记录-2/基本jar包.PNG">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-spring学习记录-2" class="post-spring学习记录-2 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      spring学习记录-2
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/04/18/spring学习记录-2/" data-id="cjum25hwe0006l0tukle9z3xd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.spring的bean管理（注解）<br>（1）注解介绍<br>（2）Spring注解开发准备<br>（3）使用注解创建对象<br>（4）使用注解注入属性<br>（5）配置文件和注解混合使用<br>2.AOP<br>（1）aop概述<br>（2）aop底层原理<br>（3）aop操作相关术语<br>-切入点-增强-切面<br>3.spring的aop操作（基于aspectj的xml方式）<br>4.log4j介绍<br>5.spring整合web项目演示<br><a id="more"></a></p>
+<h1 id="Spring的bean管理（注解）"><a href="#Spring的bean管理（注解）" class="headerlink" title="Spring的bean管理（注解）"></a>Spring的bean管理（注解）</h1><p>什么是注解？<br><strong> 1.代码里面特殊标记，使用注解可以完成相关功能</strong><br><strong> 2.注解写法 @注解名称(属性名称=属性值)</strong><br>如@Test<br><strong> 3.注解使用在类上面，方法上面 和 属性上面</strong> </p>
+<h1 id="Spring注解开发准备"><a href="#Spring注解开发准备" class="headerlink" title="Spring注解开发准备"></a>Spring注解开发准备</h1><p><strong> 1.导入jar包</strong><br>（1）导入基本的jar包<br> <img src="/2019/04/18/spring学习记录-2/基本jar包.PNG"><br>（2）导入aop的jar包<br> <img src="/2019/04/18/spring学习记录-2/基本jar包2.PNG"><br><strong> 2.创建类，类里面创建方法</strong><br><strong> 3.创建spring配置文件，引入约束</strong><br>（1）spring学习记录-1是做ioc基本功能，引入约束beans<br>（2）做spring的ioc注解开发，还需要引入新的约束<br> <img src="/2019/04/18/spring学习记录-2/约束.PNG"><br><strong> 4.开启注解扫描</strong><br> <img src="/2019/04/18/spring学习记录-2/注解扫描.PNG"></p>
+<h1 id="使用注解创建对象"><a href="#使用注解创建对象" class="headerlink" title="使用注解创建对象"></a>使用注解创建对象</h1><p><strong> 1.在创建对象的类上面使用注解实现</strong><br><img src="/2019/04/18/spring学习记录-2/注解创建对象.PNG"><br>测试代码：<br><img src="/2019/04/18/spring学习记录-2/测试代码.PNG"><br><strong> 2.创建对象有四个注解</strong><br>（1）@Component<br>（2）@Controller：WEB层<br>（3）@Service：业务层<br>（4）@Repository：持久层<br>目前这四个注解功能是一样的，都用来创建对象<br><strong> 3.创建对象是单实例还是多实例</strong><br><img src="/2019/04/18/spring学习记录-2/多实例.PNG"></p>
+<h1 id="使用注解注入属性"><a href="#使用注解注入属性" class="headerlink" title="使用注解注入属性"></a>使用注解注入属性</h1><p><strong> 1.创建service类，再创建dao类，在service类得到dao对象</strong><br><strong> 注入属性第一个注解 @Autowired</strong><br>（1）创建dao和service对象<br> <img src="/2019/04/18/spring学习记录-2/dao.PNG"><br> <img src="/2019/04/18/spring学习记录-2/service.PNG"><br>（2）在service类里面定义dao类型属性<br> <img src="/2019/04/18/spring学习记录-2/定义类型属性.PNG"><br><strong> 注入属性第二个注解 @Resource</strong><br> <img src="/2019/04/18/spring学习记录-2/第二个注解.PNG"></p>
+<h1 id="配置文件和注解混合使用"><a href="#配置文件和注解混合使用" class="headerlink" title="配置文件和注解混合使用"></a>配置文件和注解混合使用</h1><p><strong> 1.创建对象的操作使用配置文件方式实现</strong><br>  <img src="/2019/04/18/spring学习记录-2/配置对象.PNG"><br><strong> 2.注入属性的操作使用注解方式实现</strong><br>  <img src="/2019/04/18/spring学习记录-2/注入属性.PNG"></p>
+<h1 id="AOP概念"><a href="#AOP概念" class="headerlink" title="AOP概念"></a>AOP概念</h1><p><strong> 1.aop：面向切面（方面）编程，扩展功能不修改源代码实现</strong> </p>
+<p><strong> 2.AOP采取横向抽取机制，取代了传统纵向继承体系重复性代码</strong> </p>
+<p><strong> 3.画图分析原始方法原理</strong><br>   <img src="/2019/04/18/spring学习记录-2/原理.PNG"></p>
+<h1 id="AOP原理"><a href="#AOP原理" class="headerlink" title="AOP原理"></a>AOP原理</h1><p><strong> 1.aop底层使用动态代理实现</strong><br><strong> （1）第一种情况，有接口情况，使用动态代理创建接口实现类代理对象</strong><br>  <img src="/2019/04/18/spring学习记录-2/第一种.PNG"><br><strong> （2）第二种情况，没有接口情况，使用动态代理创建类的子类代理对象</strong><br>  <img src="/2019/04/18/spring学习记录-2/第二种.PNG"></p>
+<h1 id="AOP操作术语"><a href="#AOP操作术语" class="headerlink" title="AOP操作术语"></a>AOP操作术语</h1><p>Joinpoint(连接点): 类里面可以被增强的方法，这些方法称为连接点<br>Pointcut(切入点):所谓切入点是指我们要对哪些Joinpoint进行拦截的定义.<br>Advice(通知/增强):所谓通知是指拦截到Joinpoint之后所要做的事情就是通知.通知分为前置通知,后置通知,异常通知,最终通知,环绕通知(切面要完成的功能)<br>Aspect(切面): 是切入点和通知（引介）的结合<br>例子：<br>  <img src="/2019/04/18/spring学习记录-2/aop术语.PNG"><br>Introduction(引介):引介是一种特殊的通知在不修改类代码的前提下, Introduction可以在运行期为类动态地添加一些方法或Field.<br>Target(目标对象):增强方法所在的类，这个类就是目标对象。<br>Weaving(织入):是把增强应用到目标的过程.<br>    把advice 应用到 target的过程<br>Proxy（代理）:一个类被AOP织入增强后，就产生一个结果代理类</p>
+<h1 id="Spring的aop操作"><a href="#Spring的aop操作" class="headerlink" title="Spring的aop操作"></a>Spring的aop操作</h1><p><strong> 1.在spring里面进行aop操作，使用aspectj实现</strong><br>（1）aspectj（框架）不是spring一部分，和spring一起使用进行aop操作<br>（2）Spring2.0以后新增了对AspectJ支持<br><strong> 2.使用aspectj实现aop有两种方式</strong><br>（1）基于aspectj的xml配置<br>（2）基于aspectj的注解方式</p>
+<h1 id="Aop操作准备"><a href="#Aop操作准备" class="headerlink" title="Aop操作准备"></a>Aop操作准备</h1><p><strong> 1.除了导入基本的jar包之外，还需要导入aop相关的jar包</strong><br>   <img src="/2019/04/18/spring学习记录-2/aopjar包.PNG"><br><strong> 2.创建spring核心配置文件，导入aop的约束</strong><br>   <img src="/2019/04/18/spring学习记录-2/aop约束.PNG"></p>
+<h1 id="使用表达式配置切入点"><a href="#使用表达式配置切入点" class="headerlink" title="使用表达式配置切入点"></a>使用表达式配置切入点</h1><p><strong> 1.切入点：实际增强的方法</strong><br><strong> 2.常用的表达式</strong><br>execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)<br>（1）execution(<em> cn.itcast.aop.Book.add(..)：方法的全路径)<br>（2）execution(</em> cn.itcast.aop.Book.<em>(..))    </em>表示类里的全部方法<br>（3）execution(<em> </em>.<em>(..)) 所有类的所有方法<br>（4）匹配所有save开头的方法 execution(</em> save*(..))   方法中save开头的都增强</p>
+<h1 id="Aspectj的aop操作"><a href="#Aspectj的aop操作" class="headerlink" title="Aspectj的aop操作"></a>Aspectj的aop操作</h1><p><strong> 配置：</strong><br>   <img src="/2019/04/18/spring学习记录-2/aop配置.PNG"><br><strong> 环绕增强：</strong><br>   <img src="/2019/04/18/spring学习记录-2/环绕增强.PNG"><br>   <img src="/2019/04/18/spring学习记录-2/环绕增强2.PNG"><br><strong> 测试：</strong><br>   <img src="/2019/04/18/spring学习记录-2/测试环绕增强.PNG"></p>
+<h1 id="log4j介绍"><a href="#log4j介绍" class="headerlink" title="log4j介绍"></a>log4j介绍</h1><p><strong> 1.通过log4j可以看到程序运行过程中更详细的信息</strong><br>（1）经常使用log4j查看日志<br><strong> 2.使用</strong><br>（1）导入log4j的jar包<br>   <img src="/2019/04/18/spring学习记录-2/log4jjar包.PNG"><br>（2）复制log4j的配置文件，复制到src下面<br>   <img src="/2019/04/18/spring学习记录-2/log4j配置文件.PNG"><br><strong> 3.设置日志级别</strong><br>   <img src="/2019/04/18/spring学习记录-2/级别.PNG"><br>（1）info：看到基本信息<br>（2）debug：看到更详细信息</p>
+<h1 id="Spring整合web项目演示"><a href="#Spring整合web项目演示" class="headerlink" title="Spring整合web项目演示"></a>Spring整合web项目演示</h1><p><strong> 1.演示存在的问题</strong><br>（1）action调用service，service调用dao<br>每次访问action时候，都会加载spring配置文件<br>    <img src="/2019/04/18/spring学习记录-2/存在的问题.PNG"><br><strong> 2.解决方案：</strong><br>（1）在服务器启动时候，创建对象加载配置文件<br>（2）底层使用监听器、ServletContext对象</p>
+<p><strong> 3.在spring里面不需要我们自己写代码实现，帮封装</strong><br><strong> （1）封装了一个监听器，只需要 配置监听器 就可以了</strong><br><strong> （2）配置监听器之前做事情：导入spring整合web项目jar包</strong><br>    <img src="/2019/04/18/spring学习记录-2/sbjar包.PNG"><br>    <img src="/2019/04/18/spring学习记录-2/监听器.PNG"><br><strong> （3）指定加载spring配置文件位置</strong><br>    <img src="/2019/04/18/spring学习记录-2/2.PNG"><br>    <img src="/2019/04/18/spring学习记录-2/1.PNG"></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/18/spring学习记录-2/">
+    <time datetime="2019-04-18T02:45:31.000Z" class="entry-date">
+        2019-04-18
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/16/spring学习记录-1/" rel="next">spring学习记录-1 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://music.163.com/song/media/outer/url?id=31877327.mp3" controls="controls" style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/18/spring学习记录-2/">spring学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/16/spring学习记录-1/">spring学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-2/">struts学习记录-2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/04/struts学习记录-1/">struts学习记录-1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/hibernate学习记录-4/">hibernate学习记录-4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zhang
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
