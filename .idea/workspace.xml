@@ -3,7 +3,47 @@
   <component name="ChangeListManager">
     <list default="true" id="9db51b42-5108-45fc-8da3-072cebaa9e48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/css/live2d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/js/live2d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/js/message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/message.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/model.moc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath Dere1.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath Dere2.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath Dere3.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath1.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath2.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath3.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath4.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath5.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath6.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath7.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath8.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Breath9.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Fail.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Sleeping.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Success.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Sukebei1.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Sukebei2.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Sukebei3.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere1.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere2.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere3.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere4.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere5.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch Dere6.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch1.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch2.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch3.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch4.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch5.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/Touch6.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/motions/WakeUp.mtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live2d/model/tia/textures/default-costume.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/archives/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="374" column="21" lean-forward="true" selection-start-line="374" selection-start-column="21" selection-end-line="374" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -50,10 +87,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -140,15 +177,16 @@
       <option name="presentableId" value="Default" />
       <updated>1565342353958</updated>
       <workItem from="1565342355170" duration="3548000" />
-      <workItem from="1565345939933" duration="858000" />
+      <workItem from="1565345939933" duration="2223000" />
+      <workItem from="1565363426863" duration="54000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4406000" />
+    <option name="totallyTimeSpent" value="5825000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.515906" />
@@ -168,7 +206,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1747851" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.17280453" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -211,11 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/archives/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="374" column="21" lean-forward="true" selection-start-line="374" selection-start-column="21" selection-end-line="374" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
         </state>
       </provider>
     </entry>
